@@ -2,7 +2,7 @@
 //  HomeTabController.swift
 //  apnea
 //
-//  Created by Banco Santander Brasil on 02/03/20.
+//  Created by Gabriel Boccia Netto on 02/03/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 
 import Foundation

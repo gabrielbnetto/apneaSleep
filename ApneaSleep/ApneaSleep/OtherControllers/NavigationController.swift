@@ -2,7 +2,7 @@
 //  NavigationController.swift
 //  ApneaSleep
 //
-//  Created by Banco Santander Brasil on 09/03/20.
+//  Created by Gabriel Boccia Netto on 09/03/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 //
 

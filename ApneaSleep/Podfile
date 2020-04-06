@@ -9,4 +9,5 @@ target 'ApneaSleep' do
     pod 'GoogleSignIn'
     pod 'Firebase/Auth'
     pod 'Firebase/Analytics'
+    pod 'SwiftKeychainWrapper'
 end

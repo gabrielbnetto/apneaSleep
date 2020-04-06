@@ -2,21 +2,26 @@
 //  ViewController.swift
 //  ApneaSleep
 //
-//  Created by Banco Santander Brasil on 03/03/20.
+//  Created by Gabriel Boccia Netto on 03/03/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 //
 
 import UIKit
 import GoogleSignIn
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 class ViewController: UIViewController, GIDSignInDelegate {
 
-//    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    var firstName: String = ""
+    var name: String = ""
+    var email: String = ""
+    var pictureUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        signInButton.imageEdgeInsets = UIEdgeInsets( top: 0, left: 0, bottom: 0, right: 20)
+        loginButton.imageEdgeInsets = UIEdgeInsets( top: 0, left: 0, bottom: 0, right: 20)
         GIDSignIn.sharedInstance().delegate = self
     }
     
@@ -43,10 +48,17 @@ class ViewController: UIViewController, GIDSignInDelegate {
                 self.performSegue(withIdentifier: "userLogged", sender: nil)
                 if let currentUser = Auth.auth().currentUser {
                     //Informacao vinda do Oauth
-                    print(currentUser.photoURL!)
-                    print("@@@@@@@@@")
+//                    print(currentUser.displayName!)
                     // Informacao vinda do Google
-                    print(user.profile.givenName!)
+//                    print(user.profile.name!)
+
+                    self.name = (currentUser.displayName)!
+                    self.email = (currentUser.email)!
+                    self.pictureUrl = (currentUser.photoURL!.absoluteString)
+                    
+                    KeychainWrapper.standard.set(self.name, forKey: Keys.USERNAME.rawValue)
+                    KeychainWrapper.standard.set(self.email, forKey: Keys.EMAIL.rawValue)
+                    KeychainWrapper.standard.set(self.pictureUrl, forKey: Keys.IMAGEM.rawValue)
                 }
             }
         })
@@ -54,5 +66,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("User has disconnected")
+        let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tentar novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

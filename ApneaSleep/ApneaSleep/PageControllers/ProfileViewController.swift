@@ -2,20 +2,35 @@
 //  ProfileViewController.swift
 //  ApneaSleep
 //
-//  Created by Banco Santander Brasil on 10/03/20.
+//  Created by Gabriel Boccia Netto on 10/03/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 //
 
 import UIKit
 import GoogleSignIn
+import SwiftKeychainWrapper
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setImage(from: "https://media.gettyimages.com/photos/colorful-powder-explosion-in-all-directions-in-a-nice-composition-picture-id890147976?s=612x612")
+        if let userImage: String = KeychainWrapper.standard.string(forKey: Keys.IMAGEM.rawValue){
+            setImage(from: userImage)
+        }
+        if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
+            self.nameLabel.text = userName
+            self.nameLabel.textAlignment = .center
+
+        }
+        if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.EMAIL.rawValue){
+            self.emailLabel.text = userEmail
+            self.emailLabel.textAlignment = .center
+            
+        }
     }
     
     func setImage(from url: String) {
