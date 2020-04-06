@@ -404,7 +404,7 @@
         <!--Gravar-->
         <scene sceneID="dmw-O7-09Y">
             <objects>
-                <viewController id="GUW-bD-Kr2" sceneMemberID="viewController">
+                <viewController id="GUW-bD-Kr2" customClass="RecordViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Kq-Gy-itJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,18 +423,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Do-Rr-g2M">
-                                <rect key="frame" x="48" y="362" width="106" height="89"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yk-Lb-T8s">
+                                <rect key="frame" x="60" y="362" width="102" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Mvn-Vy-zO1">
-                                <rect key="frame" x="210" y="362" width="106" height="89"/>
+                                <state key="normal" backgroundImage="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="record:" destination="GUW-bD-Kr2" eventType="touchUpInside" id="Rkg-Sb-3pG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjl-Ze-51f">
+                                <rect key="frame" x="231" y="362" width="102" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
+                                <state key="normal" backgroundImage="stop.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="stopRecord:" destination="GUW-bD-Kr2" eventType="touchUpInside" id="ZKr-M9-Fhc"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gravando..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-iG-XBj">
-                                <rect key="frame" x="131" y="545" width="106" height="26"/>
+                                <rect key="frame" x="0.0" y="538" width="375" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -445,10 +455,15 @@
                         <viewLayoutGuide key="safeArea" id="TIk-ae-Abx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gravar" image="recordingtape" catalog="system" id="TB2-Td-xmO"/>
+                    <connections>
+                        <outlet property="playButton" destination="7Yk-Lb-T8s" id="DhN-us-b24"/>
+                        <outlet property="recordingLabel" destination="hWC-iG-XBj" id="AiI-kI-bbt"/>
+                        <outlet property="stopButton" destination="mjl-Ze-51f" id="O0g-35-t0y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvJ-gd-mWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4025" y="137"/>
+            <point key="canvasLocation" x="4024.8000000000002" y="136.69950738916256"/>
         </scene>
     </scenes>
     <resources>

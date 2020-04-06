@@ -21,6 +21,7 @@
 		44D6172E240EC603006B5B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172D240EC603006B5B6E /* Assets.xcassets */; };
 		44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172F240EC603006B5B6E /* LaunchScreen.storyboard */; };
 		44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */; };
+		44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E67D1D243AB25B00EE143B /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		44D61730240EC603006B5B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44D61732240EC603006B5B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44E67D1D243AB25B00EE143B /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		54A7049C87E5681A3AF33A7D /* Pods_ApneaSleep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApneaSleep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApneaSleep.release.xcconfig"; path = "Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				44D61728240EC602006B5B6E /* ViewController.swift */,
 				448CBC2F2416CCA50075FE1C /* HomeViewController.swift */,
 				44106F8B2418721200428826 /* ProfileViewController.swift */,
+				44E67D1D243AB25B00EE143B /* RecordViewController.swift */,
 			);
 			path = PageControllers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */,
 				448CBC322416CED90075FE1C /* NavigationController.swift in Sources */,
 				44D61729240EC602006B5B6E /* ViewController.swift in Sources */,
+				44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */,
 				44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */,
 				44106F8C2418721200428826 /* ProfileViewController.swift in Sources */,
 				44566AE42410060F0001BD6B /* HomeTabController.swift in Sources */,
