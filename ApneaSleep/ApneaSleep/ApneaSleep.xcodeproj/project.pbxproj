@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AEA825A1DD73C29BA9EA8B8 /* Pods_ApneaSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A7049C87E5681A3AF33A7D /* Pods_ApneaSleep.framework */; };
+		44106F8C2418721200428826 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44106F8B2418721200428826 /* ProfileViewController.swift */; };
+		442521E9243A86CB00841ED0 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442521E8243A86CB00841ED0 /* enums.swift */; };
+		44278B5F241AA182001F9E59 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44278B5E241AA182001F9E59 /* credentials.plist */; };
+		44528A6A243BF69000AF3C02 /* mailLoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44528A69243BF69000AF3C02 /* mailLoaderController.swift */; };
+		44528A6E243BFFFC00AF3C02 /* mailLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A6D243BFFFC00AF3C02 /* mailLoader.json */; };
+		44528A73243C2DC200AF3C02 /* mainImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A72243C2DC200AF3C02 /* mainImage.json */; };
+		44528A75243C501B00AF3C02 /* sleepQualityImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A74243C501B00AF3C02 /* sleepQualityImage.json */; };
+		44566AE42410060F0001BD6B /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44566AE32410060F0001BD6B /* HomeTabController.swift */; };
+		448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CBC2F2416CCA50075FE1C /* HomeViewController.swift */; };
+		448CBC322416CED90075FE1C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CBC312416CED90075FE1C /* NavigationController.swift */; };
+		449048AA243BD16E00235A24 /* moonLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 449048A9243BD16E00235A24 /* moonLoader.json */; };
+		44B5FFCE243BA6B20078CA6B /* mainloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B5FFCD243BA6B20078CA6B /* mainloader.json */; };
+		44B5FFD0243BA7600078CA6B /* mainloaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5FFCF243BA7600078CA6B /* mainloaderController.swift */; };
+		44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61724240EC602006B5B6E /* AppDelegate.swift */; };
+		44D61727240EC602006B5B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61726240EC602006B5B6E /* SceneDelegate.swift */; };
+		44D61729240EC602006B5B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61728240EC602006B5B6E /* ViewController.swift */; };
+		44D6172C240EC602006B5B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172A240EC602006B5B6E /* Main.storyboard */; };
+		44D6172E240EC603006B5B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172D240EC603006B5B6E /* Assets.xcassets */; };
+		44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172F240EC603006B5B6E /* LaunchScreen.storyboard */; };
+		44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */; };
+		44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E67D1D243AB25B00EE143B /* RecordViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4077DE105CA393D8D500BC6A /* Pods-ApneaSleep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApneaSleep.debug.xcconfig"; path = "Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep.debug.xcconfig"; sourceTree = "<group>"; };
+		44106F8B2418721200428826 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		442521E8243A86CB00841ED0 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		44278B5E241AA182001F9E59 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		44528A69243BF69000AF3C02 /* mailLoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailLoaderController.swift; sourceTree = "<group>"; };
+		44528A6D243BFFFC00AF3C02 /* mailLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mailLoader.json; sourceTree = "<group>"; };
+		44528A72243C2DC200AF3C02 /* mainImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainImage.json; sourceTree = "<group>"; };
+		44528A74243C501B00AF3C02 /* sleepQualityImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sleepQualityImage.json; sourceTree = "<group>"; };
+		44566AE32410060F0001BD6B /* HomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
+		448CBC2F2416CCA50075FE1C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		448CBC312416CED90075FE1C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		449048A9243BD16E00235A24 /* moonLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moonLoader.json; sourceTree = "<group>"; };
+		44B5FFCD243BA6B20078CA6B /* mainloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainloader.json; sourceTree = "<group>"; };
+		44B5FFCF243BA7600078CA6B /* mainloaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainloaderController.swift; sourceTree = "<group>"; };
+		44D61721240EC602006B5B6E /* Apnea Sleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apnea Sleep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D61724240EC602006B5B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44D61726240EC602006B5B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		44D61728240EC602006B5B6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44D6172B240EC602006B5B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44D6172D240EC603006B5B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44D61730240EC603006B5B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44D61732240EC603006B5B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44E67D1D243AB25B00EE143B /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		54A7049C87E5681A3AF33A7D /* Pods_ApneaSleep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApneaSleep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApneaSleep.release.xcconfig"; path = "Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44D6171E240EC602006B5B6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AEA825A1DD73C29BA9EA8B8 /* Pods_ApneaSleep.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		330AA9E00F617C463DD0208E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4077DE105CA393D8D500BC6A /* Pods-ApneaSleep.debug.xcconfig */,
+				78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		442521E7243A86BB00841ED0 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				442521E8243A86CB00841ED0 /* enums.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		44528A6F243C1D3D00AF3C02 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				44528A74243C501B00AF3C02 /* sleepQualityImage.json */,
+				44528A72243C2DC200AF3C02 /* mainImage.json */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		44566AE52410061C0001BD6B /* PageControllers */ = {
+			isa = PBXGroup;
+			children = (
+				44D61728240EC602006B5B6E /* ViewController.swift */,
+				448CBC2F2416CCA50075FE1C /* HomeViewController.swift */,
+				44106F8B2418721200428826 /* ProfileViewController.swift */,
+				44E67D1D243AB25B00EE143B /* RecordViewController.swift */,
+			);
+			path = PageControllers;
+			sourceTree = "<group>";
+		};
+		44566AE62410062E0001BD6B /* OtherControllers */ = {
+			isa = PBXGroup;
+			children = (
+				44566AE32410060F0001BD6B /* HomeTabController.swift */,
+				448CBC312416CED90075FE1C /* NavigationController.swift */,
+			);
+			path = OtherControllers;
+			sourceTree = "<group>";
+		};
+		44B5FFCC243BA69B0078CA6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44528A6F243C1D3D00AF3C02 /* Gifs */,
+				44B5FFD3243BACBB0078CA6B /* loaders */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44B5FFD3243BACBB0078CA6B /* loaders */ = {
+			isa = PBXGroup;
+			children = (
+				449048A9243BD16E00235A24 /* moonLoader.json */,
+				44B5FFCD243BA6B20078CA6B /* mainloader.json */,
+				44528A6D243BFFFC00AF3C02 /* mailLoader.json */,
+				44B5FFCF243BA7600078CA6B /* mainloaderController.swift */,
+				44528A69243BF69000AF3C02 /* mailLoaderController.swift */,
+			);
+			path = loaders;
+			sourceTree = "<group>";
+		};
+		44D61718240EC602006B5B6E = {
+			isa = PBXGroup;
+			children = (
+				44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */,
+				44D61723240EC602006B5B6E /* ApneaSleep */,
+				44D61722240EC602006B5B6E /* Products */,
+				330AA9E00F617C463DD0208E /* Pods */,
+				F41EA72C4E3499AA282B819C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		44D61722240EC602006B5B6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44D61721240EC602006B5B6E /* Apnea Sleep.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44D61723240EC602006B5B6E /* ApneaSleep */ = {
+			isa = PBXGroup;
+			children = (
+				44B5FFCC243BA69B0078CA6B /* Resources */,
+				442521E7243A86BB00841ED0 /* enums */,
+				44566AE62410062E0001BD6B /* OtherControllers */,
+				44566AE52410061C0001BD6B /* PageControllers */,
+				44D61724240EC602006B5B6E /* AppDelegate.swift */,
+				44D61726240EC602006B5B6E /* SceneDelegate.swift */,
+				44D6172A240EC602006B5B6E /* Main.storyboard */,
+				44D6172D240EC603006B5B6E /* Assets.xcassets */,
+				44D6172F240EC603006B5B6E /* LaunchScreen.storyboard */,
+				44D61732240EC603006B5B6E /* Info.plist */,
+				44278B5E241AA182001F9E59 /* credentials.plist */,
+			);
+			path = ApneaSleep;
+			sourceTree = "<group>";
+		};
+		F41EA72C4E3499AA282B819C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54A7049C87E5681A3AF33A7D /* Pods_ApneaSleep.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44D61720240EC602006B5B6E /* ApneaSleep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44D61735240EC603006B5B6E /* Build configuration list for PBXNativeTarget "ApneaSleep" */;
+			buildPhases = (
+				674F2FE109A62941D293DE4B /* [CP] Check Pods Manifest.lock */,
+				44D6171D240EC602006B5B6E /* Sources */,
+				44D6171E240EC602006B5B6E /* Frameworks */,
+				44D6171F240EC602006B5B6E /* Resources */,
+				27FD682F3766CA08A43C58AB /* [CP] Embed Pods Frameworks */,
+				B2B9710350B381B4546D400E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApneaSleep;
+			productName = ApneaSleep;
+			productReference = 44D61721240EC602006B5B6E /* Apnea Sleep.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44D61719240EC602006B5B6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Estudos;
+				TargetAttributes = {
+					44D61720240EC602006B5B6E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 44D6171C240EC602006B5B6E /* Build configuration list for PBXProject "ApneaSleep" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44D61718240EC602006B5B6E;
+			productRefGroup = 44D61722240EC602006B5B6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44D61720240EC602006B5B6E /* ApneaSleep */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44D6171F240EC602006B5B6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B5FFCE243BA6B20078CA6B /* mainloader.json in Resources */,
+				449048AA243BD16E00235A24 /* moonLoader.json in Resources */,
+				44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */,
+				44278B5F241AA182001F9E59 /* credentials.plist in Resources */,
+				44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */,
+				44528A6E243BFFFC00AF3C02 /* mailLoader.json in Resources */,
+				44528A73243C2DC200AF3C02 /* mainImage.json in Resources */,
+				44528A75243C501B00AF3C02 /* sleepQualityImage.json in Resources */,
+				44D6172E240EC603006B5B6E /* Assets.xcassets in Resources */,
+				44D6172C240EC602006B5B6E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27FD682F3766CA08A43C58AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		674F2FE109A62941D293DE4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApneaSleep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B9710350B381B4546D400E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44D6171D240EC602006B5B6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44528A6A243BF69000AF3C02 /* mailLoaderController.swift in Sources */,
+				44B5FFD0243BA7600078CA6B /* mainloaderController.swift in Sources */,
+				448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */,
+				448CBC322416CED90075FE1C /* NavigationController.swift in Sources */,
+				44D61729240EC602006B5B6E /* ViewController.swift in Sources */,
+				44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */,
+				44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */,
+				44106F8C2418721200428826 /* ProfileViewController.swift in Sources */,
+				44566AE42410060F0001BD6B /* HomeTabController.swift in Sources */,
+				442521E9243A86CB00841ED0 /* enums.swift in Sources */,
+				44D61727240EC602006B5B6E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		44D6172A240EC602006B5B6E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44D6172B240EC602006B5B6E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44D6172F240EC603006B5B6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44D61730240EC603006B5B6E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44D61733240EC603006B5B6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		44D61734240EC603006B5B6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44D61736240EC603006B5B6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4077DE105CA393D8D500BC6A /* Pods-ApneaSleep.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86XL27PVL7;
+				INFOPLIST_FILE = ApneaSleep/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tcc.ApneaSleep;
+				PRODUCT_NAME = "Apnea Sleep";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44D61737240EC603006B5B6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86XL27PVL7;
+				INFOPLIST_FILE = ApneaSleep/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tcc.ApneaSleep;
+				PRODUCT_NAME = "Apnea Sleep";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44D6171C240EC602006B5B6E /* Build configuration list for PBXProject "ApneaSleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44D61733240EC603006B5B6E /* Debug */,
+				44D61734240EC603006B5B6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44D61735240EC603006B5B6E /* Build configuration list for PBXNativeTarget "ApneaSleep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44D61736240EC603006B5B6E /* Debug */,
+				44D61737240EC603006B5B6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44D61719240EC602006B5B6E /* Project object */;
+}
