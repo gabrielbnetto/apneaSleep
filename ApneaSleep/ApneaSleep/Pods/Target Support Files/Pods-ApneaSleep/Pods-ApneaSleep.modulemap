@@ -1,6 +1,0 @@
-framework module Pods_ApneaSleep {
-  umbrella header "Pods-ApneaSleep-umbrella.h"
-
-  export *
-  module * { export * }
-}

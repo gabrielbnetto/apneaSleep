@@ -11,9 +11,16 @@
 		44106F8C2418721200428826 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44106F8B2418721200428826 /* ProfileViewController.swift */; };
 		442521E9243A86CB00841ED0 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442521E8243A86CB00841ED0 /* enums.swift */; };
 		44278B5F241AA182001F9E59 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44278B5E241AA182001F9E59 /* credentials.plist */; };
+		44528A6A243BF69000AF3C02 /* mailLoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44528A69243BF69000AF3C02 /* mailLoaderController.swift */; };
+		44528A6E243BFFFC00AF3C02 /* mailLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A6D243BFFFC00AF3C02 /* mailLoader.json */; };
+		44528A73243C2DC200AF3C02 /* mainImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A72243C2DC200AF3C02 /* mainImage.json */; };
+		44528A75243C501B00AF3C02 /* sleepQualityImage.json in Resources */ = {isa = PBXBuildFile; fileRef = 44528A74243C501B00AF3C02 /* sleepQualityImage.json */; };
 		44566AE42410060F0001BD6B /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44566AE32410060F0001BD6B /* HomeTabController.swift */; };
 		448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CBC2F2416CCA50075FE1C /* HomeViewController.swift */; };
 		448CBC322416CED90075FE1C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CBC312416CED90075FE1C /* NavigationController.swift */; };
+		449048AA243BD16E00235A24 /* moonLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 449048A9243BD16E00235A24 /* moonLoader.json */; };
+		44B5FFCE243BA6B20078CA6B /* mainloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B5FFCD243BA6B20078CA6B /* mainloader.json */; };
+		44B5FFD0243BA7600078CA6B /* mainloaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5FFCF243BA7600078CA6B /* mainloaderController.swift */; };
 		44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61724240EC602006B5B6E /* AppDelegate.swift */; };
 		44D61727240EC602006B5B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61726240EC602006B5B6E /* SceneDelegate.swift */; };
 		44D61729240EC602006B5B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D61728240EC602006B5B6E /* ViewController.swift */; };
@@ -29,9 +36,16 @@
 		44106F8B2418721200428826 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		442521E8243A86CB00841ED0 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		44278B5E241AA182001F9E59 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		44528A69243BF69000AF3C02 /* mailLoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailLoaderController.swift; sourceTree = "<group>"; };
+		44528A6D243BFFFC00AF3C02 /* mailLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mailLoader.json; sourceTree = "<group>"; };
+		44528A72243C2DC200AF3C02 /* mainImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainImage.json; sourceTree = "<group>"; };
+		44528A74243C501B00AF3C02 /* sleepQualityImage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sleepQualityImage.json; sourceTree = "<group>"; };
 		44566AE32410060F0001BD6B /* HomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
 		448CBC2F2416CCA50075FE1C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		448CBC312416CED90075FE1C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		449048A9243BD16E00235A24 /* moonLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moonLoader.json; sourceTree = "<group>"; };
+		44B5FFCD243BA6B20078CA6B /* mainloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainloader.json; sourceTree = "<group>"; };
+		44B5FFCF243BA7600078CA6B /* mainloaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainloaderController.swift; sourceTree = "<group>"; };
 		44D61721240EC602006B5B6E /* Apnea Sleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apnea Sleep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D61724240EC602006B5B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D61726240EC602006B5B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +81,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		442521E7243A86BB00841ED0 /* New Group */ = {
+		442521E7243A86BB00841ED0 /* enums */ = {
 			isa = PBXGroup;
 			children = (
 				442521E8243A86CB00841ED0 /* enums.swift */,
 			);
-			path = "New Group";
+			path = enums;
+			sourceTree = "<group>";
+		};
+		44528A6F243C1D3D00AF3C02 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				44528A74243C501B00AF3C02 /* sleepQualityImage.json */,
+				44528A72243C2DC200AF3C02 /* mainImage.json */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		44566AE52410061C0001BD6B /* PageControllers */ = {
@@ -93,6 +116,27 @@
 				448CBC312416CED90075FE1C /* NavigationController.swift */,
 			);
 			path = OtherControllers;
+			sourceTree = "<group>";
+		};
+		44B5FFCC243BA69B0078CA6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44528A6F243C1D3D00AF3C02 /* Gifs */,
+				44B5FFD3243BACBB0078CA6B /* loaders */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44B5FFD3243BACBB0078CA6B /* loaders */ = {
+			isa = PBXGroup;
+			children = (
+				449048A9243BD16E00235A24 /* moonLoader.json */,
+				44B5FFCD243BA6B20078CA6B /* mainloader.json */,
+				44528A6D243BFFFC00AF3C02 /* mailLoader.json */,
+				44B5FFCF243BA7600078CA6B /* mainloaderController.swift */,
+				44528A69243BF69000AF3C02 /* mailLoaderController.swift */,
+			);
+			path = loaders;
 			sourceTree = "<group>";
 		};
 		44D61718240EC602006B5B6E = {
@@ -117,7 +161,8 @@
 		44D61723240EC602006B5B6E /* ApneaSleep */ = {
 			isa = PBXGroup;
 			children = (
-				442521E7243A86BB00841ED0 /* New Group */,
+				44B5FFCC243BA69B0078CA6B /* Resources */,
+				442521E7243A86BB00841ED0 /* enums */,
 				44566AE62410062E0001BD6B /* OtherControllers */,
 				44566AE52410061C0001BD6B /* PageControllers */,
 				44D61724240EC602006B5B6E /* AppDelegate.swift */,
@@ -200,9 +245,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B5FFCE243BA6B20078CA6B /* mainloader.json in Resources */,
+				449048AA243BD16E00235A24 /* moonLoader.json in Resources */,
 				44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */,
 				44278B5F241AA182001F9E59 /* credentials.plist in Resources */,
 				44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */,
+				44528A6E243BFFFC00AF3C02 /* mailLoader.json in Resources */,
+				44528A73243C2DC200AF3C02 /* mainImage.json in Resources */,
+				44528A75243C501B00AF3C02 /* sleepQualityImage.json in Resources */,
 				44D6172E240EC603006B5B6E /* Assets.xcassets in Resources */,
 				44D6172C240EC602006B5B6E /* Main.storyboard in Resources */,
 			);
@@ -274,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44528A6A243BF69000AF3C02 /* mailLoaderController.swift in Sources */,
+				44B5FFD0243BA7600078CA6B /* mainloaderController.swift in Sources */,
 				448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */,
 				448CBC322416CED90075FE1C /* NavigationController.swift in Sources */,
 				44D61729240EC602006B5B6E /* ViewController.swift in Sources */,

@@ -10,4 +10,7 @@ target 'ApneaSleep' do
     pod 'Firebase/Auth'
     pod 'Firebase/Analytics'
     pod 'SwiftKeychainWrapper'
+    pod 'lottie-ios'
+    pod 'Charts'
+    
 end
