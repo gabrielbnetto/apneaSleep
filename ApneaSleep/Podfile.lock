@@ -102,6 +102,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
   - SwiftKeychainWrapper (3.4.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Charts
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - lottie-ios
   - SwiftKeychainWrapper
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -135,6 +137,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SwiftKeychainWrapper
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
@@ -159,7 +162,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 93c13d272e71e0d73d888188ae475b920a88ea30
+PODFILE CHECKSUM: ba947dd0928af5cf91c5dd890b73b864e122d400
 
 COCOAPODS: 1.8.4

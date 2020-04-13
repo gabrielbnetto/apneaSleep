@@ -18,15 +18,19 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("entrou")
         if let userImage: String = KeychainWrapper.standard.string(forKey: Keys.IMAGEM.rawValue){
+            print("entrouIMAGEM")
             setImage(from: userImage)
         }
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
+            print("entrouNOME")
             self.nameLabel.text = userName
             self.nameLabel.textAlignment = .center
 
         }
         if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.EMAIL.rawValue){
+            print("entrouEMAIL")
             self.emailLabel.text = userEmail
             self.emailLabel.textAlignment = .center
             
@@ -36,7 +40,7 @@ class ProfileViewController: UIViewController {
     func setImage(from url: String) {
         guard let imageURL = URL(string: url) else { return }
 
-            // just not to cause a deadlock in UI!
+        // To not cause a deadlock in UI!
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
 
@@ -55,9 +59,7 @@ class ProfileViewController: UIViewController {
     }
     
     func userLogout(){
-        print("entrou")
         GIDSignIn.sharedInstance()?.signOut()
-        print("Saiu")
         self.performSegue(withIdentifier: "userLoggout", sender: nil)
     }
     

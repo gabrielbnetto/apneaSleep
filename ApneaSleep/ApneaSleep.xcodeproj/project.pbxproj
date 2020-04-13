@@ -29,6 +29,8 @@
 		44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D6172F240EC603006B5B6E /* LaunchScreen.storyboard */; };
 		44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */; };
 		44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E67D1D243AB25B00EE143B /* RecordViewController.swift */; };
+		44F9002A2443AC110021AC23 /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F900292443AC110021AC23 /* ApiRequests.swift */; };
+		44F9002C2443AD500021AC23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9002B2443AD500021AC23 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		44D61732240EC603006B5B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44DD878B241AAEA500CE2A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44E67D1D243AB25B00EE143B /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		44F900292443AC110021AC23 /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
+		44F9002B2443AD500021AC23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54A7049C87E5681A3AF33A7D /* Pods_ApneaSleep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApneaSleep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApneaSleep.release.xcconfig"; path = "Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +118,8 @@
 			children = (
 				44566AE32410060F0001BD6B /* HomeTabController.swift */,
 				448CBC312416CED90075FE1C /* NavigationController.swift */,
+				44F900292443AC110021AC23 /* ApiRequests.swift */,
+				44F9002B2443AD500021AC23 /* User.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -324,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F9002C2443AD500021AC23 /* User.swift in Sources */,
 				44528A6A243BF69000AF3C02 /* mailLoaderController.swift in Sources */,
+				44F9002A2443AC110021AC23 /* ApiRequests.swift in Sources */,
 				44B5FFD0243BA7600078CA6B /* mainloaderController.swift in Sources */,
 				448CBC302416CCA50075FE1C /* HomeViewController.swift in Sources */,
 				448CBC322416CED90075FE1C /* NavigationController.swift in Sources */,

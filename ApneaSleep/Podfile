@@ -12,5 +12,6 @@ target 'ApneaSleep' do
     pod 'SwiftKeychainWrapper'
     pod 'lottie-ios'
     pod 'Charts'
+    pod 'SwiftyJSON', '~> 4.0'
     
 end

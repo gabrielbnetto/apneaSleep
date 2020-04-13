@@ -11,15 +11,15 @@ import GoogleSignIn
 import FirebaseAuth
 import SwiftKeychainWrapper
 import Lottie
+import SwiftyJSON
 
 class ViewController: UIViewController, GIDSignInDelegate {
 
     @IBOutlet weak var mainImage: AnimationView!
     @IBOutlet weak var loginButton: UIButton!
-    var firstName: String = ""
-    var name: String = ""
+    var nome: String = ""
     var email: String = ""
-    var pictureUrl = ""
+    var pictureUrl: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,21 +59,31 @@ class ViewController: UIViewController, GIDSignInDelegate {
                 mainLoaderController.stop()
                 return
             }else{
-                print("Entrou")
-                self.performSegue(withIdentifier: "userLogged", sender: nil)
                 if let currentUser = Auth.auth().currentUser {
                     //Informacao vinda do Oauth
 //                    print(currentUser.displayName!)
                     // Informacao vinda do Google
 //                    print(user.profile.name!)
 
-                    self.name = (currentUser.displayName)!
-                    self.email = (currentUser.email)!
-                    self.pictureUrl = (currentUser.photoURL!.absoluteString)
+                    let user = User(nome: currentUser.displayName!, email: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString)
                     
-                    KeychainWrapper.standard.set(self.name, forKey: Keys.USERNAME.rawValue)
-                    KeychainWrapper.standard.set(self.email, forKey: Keys.EMAIL.rawValue)
-                    KeychainWrapper.standard.set(self.pictureUrl, forKey: Keys.IMAGEM.rawValue)
+                    if KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue) == nil{
+                        self.nome = user.nome
+                        self.email = user.email
+                        self.pictureUrl = user.pictureUrl
+                        print("USERRR \(user)")
+                        KeychainWrapper.standard.set(user.nome, forKey: Keys.USERNAME.rawValue)
+                        KeychainWrapper.standard.set(user.email, forKey: Keys.EMAIL.rawValue)
+                        KeychainWrapper.standard.set(user.pictureUrl, forKey: Keys.IMAGEM.rawValue)
+                        
+                        self.registerUser(user: user)
+                        
+                    } else {
+                        
+                        user.userId = KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue)
+                        self.updateUser(user: user)
+                        
+                    }
                 }
             }
         })
@@ -82,8 +92,45 @@ class ViewController: UIViewController, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("User has disconnected")
         mainLoaderController.stop()
-        let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tentar novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
+        self.displayAlert()
+    }
+    
+    func registerUser(user: User) {
+        let postRequest = ApiResquest(endpoint: "registerUser")
+        postRequest.postUser(user, completion: {result in
+            switch result {
+            case .success(let userResp):
+                print("User: \(userResp)")
+                let userId = userResp["userId"].stringValue
+                KeychainWrapper.standard.set(userId, forKey: Keys.USERID.rawValue)
+                self.updateUser(user: user)
+            case .failure(let error):
+                self.displayAlert()
+                print("Error: \(error)")
+            }
+        })
+    }
+        
+    func updateUser(user: User) {
+        let postRequest = ApiResquest(endpoint: "updateUser")
+        postRequest.postUser(user, completion: {result in
+            switch result {
+            case .success(let userResp):
+                print("User Updated: \(userResp)")
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "userLogged", sender: nil)
+                }
+            case .failure(let error):
+                self.displayAlert()
+                print("Erro: \(error)")
+            }
+        })
+    }
+    
+    func displayAlert() {
+        let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        mainLoaderController.stop()
     }
 }

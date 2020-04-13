@@ -1,6 +1,4 @@
 //
-//  SantanderLoadingView.swift
-//  Novo Now
 //
 //  Created by Gabriel Boccia Netto on 05/03/20.
 //  Copyright © 2020 Estudos. All rights reserved.

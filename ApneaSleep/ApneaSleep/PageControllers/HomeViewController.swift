@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var moonLoader: AnimationView!
     @IBOutlet weak var sleepQualityImage: AnimationView!
+    @IBOutlet weak var sleepQualityLabel: UILabel!
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var hellowLabel: UILabel!
@@ -30,12 +31,12 @@ class HomeViewController: UIViewController {
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
             hellowLabel.text = "Olá " + userName + "!"
         }
-        startAnimation()
+        startAnimation(animation: "moonLoader", label: loadingLabel, view: moonLoader)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.pieChart.isHidden = false
             self.moonLoader.isHidden = true
             self.createChart()
-            self.startAnimation2()
+            self.startAnimation(animation: "sleepQualityImage", label: self.sleepQualityLabel, view: self.sleepQualityImage)
         }
     }
     
@@ -57,21 +58,12 @@ class HomeViewController: UIViewController {
         
     }
 
-    func startAnimation() {
-        loadingLabel.textAlignment = .center
-        let checkMarkAnimation = AnimationView(name: "moonLoader")
-        moonLoader.contentMode = .scaleAspectFit
-        self.moonLoader.addSubview(checkMarkAnimation)
-        checkMarkAnimation.frame = self.moonLoader.bounds
-        checkMarkAnimation.loopMode = .loop
-        checkMarkAnimation.play()
-    }
-    
-    func startAnimation2() {
-        let checkMarkAnimation = AnimationView(name: "sleepQualityImage")
-        sleepQualityImage.contentMode = .scaleAspectFit
-        self.sleepQualityImage.addSubview(checkMarkAnimation)
-        checkMarkAnimation.frame = self.sleepQualityImage.bounds
+    func startAnimation(animation: String, label: UILabel, view: AnimationView) {
+        label.textAlignment = .center
+        let checkMarkAnimation = AnimationView(name: animation)
+        view.contentMode = .scaleAspectFit
+        view.addSubview(checkMarkAnimation)
+        checkMarkAnimation.frame = view.bounds
         checkMarkAnimation.loopMode = .loop
         checkMarkAnimation.play()
     }
