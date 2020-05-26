@@ -18,19 +18,16 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("entrou")
+
         if let userImage: String = KeychainWrapper.standard.string(forKey: Keys.IMAGEM.rawValue){
-            print("entrouIMAGEM")
             setImage(from: userImage)
         }
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
-            print("entrouNOME")
             self.nameLabel.text = userName
             self.nameLabel.textAlignment = .center
 
         }
         if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.EMAIL.rawValue){
-            print("entrouEMAIL")
             self.emailLabel.text = userEmail
             self.emailLabel.textAlignment = .center
             

@@ -70,4 +70,32 @@ struct ApiResquest {
             completion(.failure(.otherProblem))
         }
     }
+    
+    func postAudio(_ json: Audio, completion: @escaping (Result<JSON, APIError>) -> Void){
+
+        do {
+            var urlRequest = URLRequest(url: resourceUrl)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(json)
+
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
+                    completion(.failure(.responseProblem))
+                    return
+                }
+                
+                do{
+                    print(jsonData)
+                    let json = try JSON(data: jsonData)
+                    completion(.success(json))
+                } catch {
+                    completion(.failure(.decodeProblem))
+                }
+            }
+            dataTask.resume()
+        } catch {
+            completion(.failure(.otherProblem))
+        }
+    }
 }

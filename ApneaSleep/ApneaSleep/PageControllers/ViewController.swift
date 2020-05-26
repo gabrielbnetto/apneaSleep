@@ -61,7 +61,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
             }else{
                 if let currentUser = Auth.auth().currentUser {
                     //Informacao vinda do Oauth
-//                    print(currentUser.displayName!)
+                    print(currentUser.displayName!)
+                    print(currentUser.uid)
                     // Informacao vinda do Google
 //                    print(user.profile.name!)
 

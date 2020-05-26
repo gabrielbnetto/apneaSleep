@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftKeychainWrapper
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
@@ -15,14 +16,15 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder!
     var numberOfRecords:Int = 0
     var fileName: URL!
-    var fileWavName: URL!
     var time = 0
     var timer = Timer()
+    var base64: String = ""
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var resendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
             if hasPermission { print("Tem persmissao")}
         }
+        
+        self.resendButton.isHidden = true
     }
     
     func getDirectory() -> URL {
@@ -82,8 +86,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func stopRecord(_ sender: Any) {
         self.stoppedAudio()
         UserDefaults.standard.set(numberOfRecords, forKey: "recordNumber")
-        self.audioConversorToWav()
-//        self.tranformAudioToBase64()
+        self.transformToBase64andSendAudio()
     }
     
     func buttonsEnabled(play: Bool, stop: Bool){
@@ -91,18 +94,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.isEnabled = stop
     }
     
-    func audioConversorToWav(){
-        self.fileWavName = getDirectory().appendingPathComponent("recordWav\(numberOfRecords).wav")
-        try! FileManager.default.copyItem(at: self.fileName, to: self.fileWavName)
-        try! FileManager.default.removeItem(at: self.fileName)
+    func transformToBase64andSendAudio(){
+        if let base64String = try? Data(contentsOf: self.fileName).base64EncodedString() {
+            self.base64 = base64String
+//            print(self.base64)
+            self.sendAudio(encodedAudio: base64String)
+        }
     }
-    
-//    func tranformAudioToBase64(){
-//        if let base64String = try? Data(contentsOf: self.fileWavName).base64EncodedString() {
-//            print(base64String)
-//        }
-//    }
-//
 
     @objc func timerCount() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
@@ -128,6 +126,28 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         recordingLabel.text = "Não está gravando"
         self.recordingLabel.textAlignment = .center
         self.buttonsEnabled(play: true, stop: false)
+    }
+    
+    func sendAudio(encodedAudio: String) {
+        if let userId: String = KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue){
+            let audio = Audio(userId: userId, encodedAudio: encodedAudio)
+            let postRequest = ApiResquest(endpoint: "receiveEncodedAudio")
+            postRequest.postAudio(audio, completion: {result in
+                switch result {
+                case .success(let sucess):
+                    print("User: \(sucess)")
+                    self.resendButton.isHidden = true
+                case .failure(let error):
+                    self.resendButton.isHidden = false
+                    self.displayAlert(title: "Erro", message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.")
+                    print("Error: \(error)")
+                }
+            })
+        }
+    }
+    
+    @IBAction func resendAudio(_ sender: Any) {
+        self.sendAudio(encodedAudio: self.base64)
     }
 }
 
