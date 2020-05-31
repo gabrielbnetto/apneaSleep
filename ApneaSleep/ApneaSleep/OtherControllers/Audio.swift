@@ -9,21 +9,17 @@
 import Foundation
 
 class Audio: Codable {
-    var userId: String
     var audioDetails = AudioDetails(encodedAudio: "")
 
-    init(userId: String, encodedAudio: String) {
-        self.userId = userId
+    init(encodedAudio: String) {
         self.audioDetails.encodedAudio = encodedAudio
     }
 }
 
 class AudioDetails: Codable {
     var encodedAudio: String
-    var audioFormat: String
     
     init(encodedAudio:String) {
         self.encodedAudio = encodedAudio
-        self.audioFormat = ".wav"
     }
 }

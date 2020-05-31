@@ -9,14 +9,15 @@
 import Foundation
 
 class User: Codable {
-    var userId: String?
-    var nome: String
-    var email: String
+    var name: String
+    var username: String
     var pictureUrl: String
+    var uid: String
 
-    init(nome: String, email:String, pictureUrl: String) {
-        self.nome = nome
-        self.email = email
+    init(name: String, username:String, pictureUrl: String, uid: String) {
+        self.name = name
+        self.uid = uid
+        self.username = username
         self.pictureUrl = pictureUrl
     }
 }

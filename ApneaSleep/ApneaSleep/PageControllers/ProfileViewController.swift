@@ -22,12 +22,12 @@ class ProfileViewController: UIViewController {
         if let userImage: String = KeychainWrapper.standard.string(forKey: Keys.IMAGEM.rawValue){
             setImage(from: userImage)
         }
-        if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
+        if let userName: String = KeychainWrapper.standard.string(forKey: Keys.NAME.rawValue){
             self.nameLabel.text = userName
             self.nameLabel.textAlignment = .center
 
         }
-        if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.EMAIL.rawValue){
+        if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
             self.emailLabel.text = userEmail
             self.emailLabel.textAlignment = .center
             

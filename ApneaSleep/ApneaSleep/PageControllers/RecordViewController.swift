@@ -129,21 +129,23 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func sendAudio(encodedAudio: String) {
-        if let userId: String = KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue){
-            let audio = Audio(userId: userId, encodedAudio: encodedAudio)
-            let postRequest = ApiResquest(endpoint: "receiveEncodedAudio")
-            postRequest.postAudio(audio, completion: {result in
-                switch result {
-                case .success(let sucess):
+        let audio = Audio(encodedAudio: encodedAudio)
+        let postRequest = ApiResquest(endpoint: "receiveEncodedAudio")
+        postRequest.postAudio(audio, completion: {result in
+            switch result {
+            case .success(let sucess):
+                DispatchQueue.main.async {
                     print("User: \(sucess)")
                     self.resendButton.isHidden = true
-                case .failure(let error):
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
                     self.resendButton.isHidden = false
                     self.displayAlert(title: "Erro", message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.")
                     print("Error: \(error)")
                 }
-            })
-        }
+            }
+        })
     }
     
     @IBAction func resendAudio(_ sender: Any) {

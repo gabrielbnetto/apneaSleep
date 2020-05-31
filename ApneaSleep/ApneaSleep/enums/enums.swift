@@ -7,14 +7,16 @@
 //
 
 enum Keys: String {
-    case USERID = "ChaveParaGuardarIdUsuario"
-    case USERNAME  = "ChaveParaGuardarUsuarioNome"
+    case JWT  = "ChaveParaGuardarJWT"
+    case UID = "ChaveParaGuardarUID"
+    case USERNAME  = "ChaveParaGuardarEmail"
     case PASSWORD  = "ChaveParaGuardarSenha"
-    case EMAIL  = "ChaveParaGuardarEmail"
+    case NAME  = "ChaveParaGuardarNome"
     case IMAGEM  = "ChaveParaGuardarImagem"
 }
 
 enum APIError: Error {
+    case tokenExpired
     case responseProblem
     case decodeProblem
     case otherProblem

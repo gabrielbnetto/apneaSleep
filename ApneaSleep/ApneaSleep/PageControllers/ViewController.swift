@@ -60,31 +60,15 @@ class ViewController: UIViewController, GIDSignInDelegate {
                 return
             }else{
                 if let currentUser = Auth.auth().currentUser {
-                    //Informacao vinda do Oauth
-                    print(currentUser.displayName!)
-                    print(currentUser.uid)
-                    // Informacao vinda do Google
-//                    print(user.profile.name!)
 
-                    let user = User(nome: currentUser.displayName!, email: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString)
+                    let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
                     
-                    if KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue) == nil{
-                        self.nome = user.nome
-                        self.email = user.email
-                        self.pictureUrl = user.pictureUrl
-                        print("USERRR \(user)")
-                        KeychainWrapper.standard.set(user.nome, forKey: Keys.USERNAME.rawValue)
-                        KeychainWrapper.standard.set(user.email, forKey: Keys.EMAIL.rawValue)
+                        KeychainWrapper.standard.set(user.username, forKey: Keys.USERNAME.rawValue)
+                        KeychainWrapper.standard.set(user.uid, forKey: Keys.UID.rawValue)
+                        KeychainWrapper.standard.set(user.name, forKey: Keys.NAME.rawValue)
                         KeychainWrapper.standard.set(user.pictureUrl, forKey: Keys.IMAGEM.rawValue)
                         
-                        self.registerUser(user: user)
-                        
-                    } else {
-                        
-                        user.userId = KeychainWrapper.standard.string(forKey: Keys.USERID.rawValue)
-                        self.updateUser(user: user)
-                        
-                    }
+                        self.authenticateUser(user: user)
                 }
             }
         })
@@ -96,34 +80,16 @@ class ViewController: UIViewController, GIDSignInDelegate {
         self.displayAlert()
     }
     
-    func registerUser(user: User) {
-        let postRequest = ApiResquest(endpoint: "registerUser")
-        postRequest.postUser(user, completion: {result in
+    func authenticateUser(user: User) {
+        let postRequest = ApiResquest(endpoint: "authenticate")
+        postRequest.authenticateUser(user, completion: {result in
             switch result {
-            case .success(let userResp):
-                print("User: \(userResp)")
-                let userId = userResp["userId"].stringValue
-                KeychainWrapper.standard.set(userId, forKey: Keys.USERID.rawValue)
-                self.updateUser(user: user)
-            case .failure(let error):
-                self.displayAlert()
-                print("Error: \(error)")
-            }
-        })
-    }
-        
-    func updateUser(user: User) {
-        let postRequest = ApiResquest(endpoint: "updateUser")
-        postRequest.postUser(user, completion: {result in
-            switch result {
-            case .success(let userResp):
-                print("User Updated: \(userResp)")
+            case true:
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "userLogged", sender: nil)
                 }
-            case .failure(let error):
+            case false:
                 self.displayAlert()
-                print("Erro: \(error)")
             }
         })
     }
@@ -132,6 +98,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
         let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        mainLoaderController.stop()
+        DispatchQueue.main.async {
+            mainLoaderController.stop()
+        }
     }
 }
