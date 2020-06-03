@@ -10,7 +10,6 @@ enum Keys: String {
     case JWT  = "ChaveParaGuardarJWT"
     case UID = "ChaveParaGuardarUID"
     case USERNAME  = "ChaveParaGuardarEmail"
-    case PASSWORD  = "ChaveParaGuardarSenha"
     case NAME  = "ChaveParaGuardarNome"
     case IMAGEM  = "ChaveParaGuardarImagem"
 }
