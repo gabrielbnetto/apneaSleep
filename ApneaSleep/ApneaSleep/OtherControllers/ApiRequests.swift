@@ -101,13 +101,7 @@ struct ApiResquest {
                     completion(.failure(.tokenExpired))
                     return
                 }else if(httpResponse!.statusCode == 200){
-                    do{
-                        print(data!)
-                        let json = try JSON(data: data!)
-                        completion(.success(json))
-                    } catch {
-                        completion(.failure(.decodeProblem))
-                    }
+                    completion(.success(true))
                 }else{
                     completion(.failure(.responseProblem))
                 }

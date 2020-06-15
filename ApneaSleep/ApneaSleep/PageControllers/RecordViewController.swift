@@ -20,6 +20,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     var timer = Timer()
     var base64: String = ""
     
+    @IBOutlet weak var audioClear: UIButton!
+    @IBOutlet weak var audioName: UITextField!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
@@ -39,7 +41,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             if hasPermission { print("Tem persmissao")}
         }
         
+        self.audioName.isHidden = true
         self.resendButton.isHidden = true
+        self.audioClear.isHidden = true
     }
     
     func getDirectory() -> URL {
@@ -86,7 +90,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func stopRecord(_ sender: Any) {
         self.stoppedAudio()
         UserDefaults.standard.set(numberOfRecords, forKey: "recordNumber")
-        self.transformToBase64andSendAudio()
+        self.audioName.isHidden = false
+        self.resendButton.isHidden = false
+        self.audioClear.isHidden = false
     }
     
     func buttonsEnabled(play: Bool, stop: Bool){
@@ -95,15 +101,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func transformToBase64andSendAudio(){
-        if let base64String = try? Data(contentsOf: self.fileName).base64EncodedString() {
-            self.base64 = base64String
-//            print(self.base64)
+        if let base64String = try? Data(contentsOf: self.fileName).base64EncodedString() {                self.base64 = base64String
+    //            print(self.base64)
             self.sendAudio(encodedAudio: base64String)
         }
     }
 
     @objc func timerCount() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
             self!.time += 1
             
             let formattedSeconds = (self!.time / 36000)
@@ -116,7 +121,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     func stoppedAudio() {
         audioRecorder.stop()
         audioRecorder = nil
-        timer.invalidate()
+        self.timer.invalidate()
+        self.time = 0
         self.notRecordingLabels()
     }
     
@@ -129,7 +135,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func sendAudio(encodedAudio: String) {
-        let audio = Audio(encodedAudio: encodedAudio)
+        let audio = Audio(encodedAudio: encodedAudio, audioName: self.audioName.text!)
         let postRequest = ApiResquest(endpoint: "receiveEncodedAudio")
         postRequest.postAudio(audio, completion: {result in
             switch result {
@@ -137,20 +143,34 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
                 DispatchQueue.main.async {
                     print("User: \(sucess)")
                     self.resendButton.isHidden = true
+                    self.audioName.isHidden = true
+                    self.audioClear.isHidden = true
+                    self.audioName.text = ""
+                    mainLoaderController.stop()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.resendButton.isHidden = false
                     self.displayAlert(title: "Erro", message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.")
                     print("Error: \(error)")
+                    mainLoaderController.stop()
                 }
             }
         })
     }
     
     @IBAction func resendAudio(_ sender: Any) {
-        self.sendAudio(encodedAudio: self.base64)
+        if(self.audioName.text?.isEmpty == false){
+            mainLoaderController.start()
+            self.transformToBase64andSendAudio()
+        }else{
+             self.displayAlert(title: "Erro", message: "E necessario informar um nome para o audio!")
+        }
+    }
+    
+    @IBAction func clearAudio(_ sender: Any) {
+        self.resendButton.isHidden = true
+        self.audioName.isHidden = true
+        self.audioClear.isHidden = true
+        self.audioName.text = ""
     }
 }
-
-

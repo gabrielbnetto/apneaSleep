@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         pieChart.isHidden = true
         super.viewDidLoad()
-        if let userName: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
+        if let userName: String = KeychainWrapper.standard.string(forKey: Keys.NAME.rawValue){
             hellowLabel.text = "Olá " + userName + "!"
         }
         startAnimation(animation: "moonLoader", label: loadingLabel, view: moonLoader)
