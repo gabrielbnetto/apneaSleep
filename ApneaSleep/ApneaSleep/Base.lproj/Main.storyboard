@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -193,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
         </scene>
-        <!--Início-->
+        <!--Apnea Sleep-->
         <scene sceneID="7DZ-pb-H7R">
             <objects>
                 <viewController id="svt-wt-NXy" customClass="HomeViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,98 +202,287 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kiz-Oj-mQt">
-                                <rect key="frame" x="27" y="118" width="211" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Após analisar seu sono, o Apnea Sleep chegou a conclusão que:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE3-mm-Y9d">
-                                <rect key="frame" x="16" y="185" width="324" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="output-onlinepngtools" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-ry-MML">
-                                <rect key="frame" x="257" y="106" width="78" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMU-mY-QY9" customClass="AnimationView">
-                                <rect key="frame" x="1" y="277" width="375" height="453"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="ABj-EX-Tt8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carregando..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPp-F3-5kN">
-                                        <rect key="frame" x="0.0" y="398" width="375" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8G-0N-pCz" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="278" width="375" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qualidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-IO-yXw">
-                                        <rect key="frame" x="148" y="130" width="78" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="do Sono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-K0-AHM">
-                                        <rect key="frame" x="155" y="268" width="64" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpg-ih-IXl" customClass="AnimationView">
-                                        <rect key="frame" x="110" y="143" width="160" height="136"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqo-ty-SBH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1012"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPW-an-u3b">
+                                                <rect key="frame" x="30" y="25" width="221" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="output-onlinepngtools" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-rV-9uj">
+                                                <rect key="frame" x="288" y="12" width="79" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Após analisar seu sono, o Apnea Sleep chegou a conclusão que:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Po9-6r-guq">
+                                                <rect key="frame" x="0.0" y="53" width="376" height="87"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="an0-qU-Ndd" customClass="AnimationView">
+                                                <rect key="frame" x="0.0" y="157" width="375" height="453"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carregando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-JQ-pAw">
+                                                        <rect key="frame" x="0.0" y="-13" width="375" height="55"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clique no botão abaixo para ver as falas detectadas em seus audios." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-h2-zOG">
+                                                <rect key="frame" x="4" y="546" width="367" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXP-mo-09O">
+                                                <rect key="frame" x="8" y="143" width="359" height="408"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você está falando durante seu sono." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9c-5U-fls">
+                                                        <rect key="frame" x="31" y="2" width="296" height="70"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5g5-00-Dgf" customClass="AnimationView">
+                                                        <rect key="frame" x="115" y="78" width="128" height="136"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recomendamos que você procure um profissional para verificar se não possui nenhum problema de saúde." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go8-Pf-xHP">
+                                                        <rect key="frame" x="13" y="224" width="335" height="126"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*É possível obter um relatório dos audio por email no perfil" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-1o-Xxf">
+                                                        <rect key="frame" x="-4" y="347" width="367" height="71"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.13004265084030323" green="0.17769843227695256" blue="0.35732685901958094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GLP-ka-nW3" customClass="AnimationView">
+                                                <rect key="frame" x="77" y="623" width="208" height="123"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="pieChartColor2"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-mh-BLX">
+                                                <rect key="frame" x="21" y="759" width="333" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Ver Audios" image="speaker.2.fill" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sendMail:" destination="Nsl-9Y-opC" eventType="touchUpInside" id="HhA-pC-IDg"/>
+                                                    <segue destination="NC2-bp-LSH" kind="show" id="pnT-dm-8mU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="pieChartColor2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1012" id="b5C-k2-Xxq"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A qualidade do seu sono é de aproximadamente: 75%" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-BB-Hdb">
-                                        <rect key="frame" x="0.0" y="368" width="375" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="nqo-ty-SBH" firstAttribute="leading" secondItem="Bhw-d0-hbK" secondAttribute="leading" id="ELx-Kc-SNC"/>
+                                    <constraint firstAttribute="bottom" secondItem="nqo-ty-SBH" secondAttribute="bottom" constant="-200" id="PnB-GO-Omg"/>
+                                    <constraint firstItem="nqo-ty-SBH" firstAttribute="top" secondItem="VFK-W7-ZXf" secondAttribute="top" id="WT8-Dv-cOH"/>
+                                    <constraint firstItem="nqo-ty-SBH" firstAttribute="centerX" secondItem="ABj-EX-Tt8" secondAttribute="centerX" id="gh7-G1-lT8"/>
+                                    <constraint firstAttribute="trailing" secondItem="nqo-ty-SBH" secondAttribute="trailing" id="qfQ-rH-GIm"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="mSp-cA-im6"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="VFK-W7-ZXf"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Bhw-d0-hbK"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="rtV-jw-gb0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Início" image="house.fill" catalog="system" id="aQJ-1c-nkk"/>
-                    <navigationItem key="navigationItem" id="FOi-h8-VAO"/>
+                    <navigationItem key="navigationItem" title="Apnea Sleep" id="FOi-h8-VAO">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dlg-Nf-UtL"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="hellowLabel" destination="Kiz-Oj-mQt" id="GGO-n3-Kvb"/>
-                        <outlet property="loadingLabel" destination="IPp-F3-5kN" id="oYP-Go-d0V"/>
-                        <outlet property="moonLoader" destination="cMU-mY-QY9" id="ff3-Za-cai"/>
-                        <outlet property="pieChart" destination="t8G-0N-pCz" id="WVA-xN-dle"/>
-                        <outlet property="sleepQualityImage" destination="xpg-ih-IXl" id="1mw-8w-aAK"/>
-                        <outlet property="sleepQualityLabel" destination="qaH-BB-Hdb" id="ARY-xd-i0O"/>
+                        <outlet property="helloLabel" destination="RPW-an-u3b" id="u7X-33-U8D"/>
+                        <outlet property="moonLoader" destination="an0-qU-Ndd" id="Nxu-L1-xm2"/>
+                        <outlet property="personTalking" destination="GLP-ka-nW3" id="bJR-yt-9Mj"/>
+                        <outlet property="resultView" destination="KXP-mo-09O" id="97Y-Dm-H6H"/>
+                        <outlet property="sleepQualityImage" destination="5g5-00-Dgf" id="qq0-Zb-ivq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1S-Va-IdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3208.8000000000002" y="-497.29064039408871"/>
         </scene>
+        <!--Apnea Sleep-->
+        <scene sceneID="pgW-Ur-pzR">
+            <objects>
+                <tableViewController id="NC2-bp-LSH" customClass="ListAudioViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D2X-gT-C1m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="pieChartColor2"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AudioViewCell" rowHeight="90" id="xBV-nH-CEQ" customClass="AudioViewCell" customModule="Apnea_Sleep" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xBV-nH-CEQ" id="XxH-oE-z0e" customClass="AudioViewCell" customModule="Apnea_Sleep" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="audio-file" translatesAutoresizingMaskIntoConstraints="NO" id="zGE-i1-8gK">
+                                            <rect key="frame" x="6" y="14" width="52" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymw-xR-ssg">
+                                            <rect key="frame" x="80" y="19" width="135" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data do Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJC-XQ-I1d">
+                                            <rect key="frame" x="80" y="51" width="115" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="pieChartColor2"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="pieChartColor2"/>
+                                <connections>
+                                    <outlet property="audioDate" destination="tJC-XQ-I1d" id="Th7-6x-zwh"/>
+                                    <outlet property="audioName" destination="ymw-xR-ssg" id="gti-gy-72H"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NC2-bp-LSH" id="gcF-zr-Lmh"/>
+                            <outlet property="delegate" destination="NC2-bp-LSH" id="365-hI-6ky"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Apnea Sleep" id="cgl-JK-e0d">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0pl-tB-WtG"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYG-RS-wPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3996" y="-499.50738916256159"/>
+        </scene>
+        <!--Apnea Sleep-->
+        <scene sceneID="bBx-IK-IWr">
+            <objects>
+                <viewController storyboardIdentifier="AudioDetailViewController" id="rMF-EQ-UFt" customClass="AudioDetailViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V58-a5-vaU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Yty-Dk-U6i">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-V4-knq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1012"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-tw-jfn" customClass="AnimationView">
+                                                <rect key="frame" x="0.0" y="-53" width="375" height="247"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-xT-v5e">
+                                                        <rect key="frame" x="10" y="172" width="358" height="77"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="77" id="yXm-JP-g5h"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="pieChartColor2"/>
+                                                <constraints>
+                                                    <constraint firstItem="Qlq-xT-v5e" firstAttribute="top" secondItem="SWd-tw-jfn" secondAttribute="top" constant="172" id="NfS-pO-ntW"/>
+                                                    <constraint firstItem="Qlq-xT-v5e" firstAttribute="leading" secondItem="SWd-tw-jfn" secondAttribute="leading" constant="10" id="bvB-o3-M70"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qlq-xT-v5e" secondAttribute="trailing" constant="7" id="h75-SK-vdK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Qlq-xT-v5e" secondAttribute="bottom" constant="-2" id="q3m-Bx-VHZ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="pieChartColor2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="SWd-tw-jfn" secondAttribute="trailing" id="5V3-x4-P2h"/>
+                                            <constraint firstItem="SWd-tw-jfn" firstAttribute="leading" secondItem="3VE-V4-knq" secondAttribute="leading" id="BB7-Dr-AeY"/>
+                                            <constraint firstItem="SWd-tw-jfn" firstAttribute="top" secondItem="3VE-V4-knq" secondAttribute="top" constant="-53" id="fs4-yL-gJD"/>
+                                            <constraint firstAttribute="height" constant="1012" id="yNM-h3-gb5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3VE-V4-knq" firstAttribute="centerX" secondItem="Yty-Dk-U6i" secondAttribute="centerX" id="2EB-l4-qFa"/>
+                                    <constraint firstItem="3VE-V4-knq" firstAttribute="top" secondItem="6ps-nQ-41r" secondAttribute="top" id="HLi-Th-bxd"/>
+                                    <constraint firstItem="3VE-V4-knq" firstAttribute="leading" secondItem="52Q-jy-sKq" secondAttribute="leading" id="Qwq-1h-jwl"/>
+                                    <constraint firstAttribute="bottom" secondItem="3VE-V4-knq" secondAttribute="bottom" constant="-200" id="m7f-Dm-49f"/>
+                                    <constraint firstAttribute="trailing" secondItem="3VE-V4-knq" secondAttribute="trailing" id="tCg-oL-snL"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6ps-nQ-41r"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="52Q-jy-sKq"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" name="pieChartColor2"/>
+                        <viewLayoutGuide key="safeArea" id="twI-et-sUY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Apnea Sleep" id="Jjg-Pd-eAe"/>
+                    <connections>
+                        <outlet property="audioNameLabel" destination="Qlq-xT-v5e" id="UZd-PF-1GV"/>
+                        <outlet property="mainImage" destination="SWd-tw-jfn" id="qTi-sS-kYW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hex-6e-yqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4909.6000000000004" y="-505.41871921182269"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kaJ-YC-R93">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D2B-DK-lnD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="iZb-ot-3dr"/>
+                    <navigationItem key="navigationItem" id="iZb-ot-3dr">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TVo-pN-bnI"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorTransitionMaskImage="navigationBar:Yzz-cs-sUy:backIndicatorTransitionMaskImage" id="Yzz-cs-sUy">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="28"/>
@@ -313,7 +503,9 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SfZ-dD-BC9" customClass="HomeTabController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Apnea Sleep" id="lya-nw-Bhc"/>
+                    <navigationItem key="navigationItem" title="Apnea Sleep" id="lya-nw-Bhc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="iiE-Lm-Y4B"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PEw-fB-ATS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -369,7 +561,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pct-Z3-JL4">
-                                        <rect key="frame" x="21" y="436" width="333" height="40"/>
+                                        <rect key="frame" x="21" y="525" width="333" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -540,7 +732,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Refazer Audio">
+                                <state key="normal" title="Refazer Audio" image="repeat" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -569,10 +761,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvJ-gd-mWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024.8000000000002" y="136.69950738916256"/>
+            <point key="canvasLocation" x="3996" y="172"/>
         </scene>
     </scenes>
     <resources>
+        <image name="audio-file" width="170.66667175292969" height="170.66667175292969"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="google-logo" width="13.333333015441895" height="13.333333015441895"/>
@@ -971,6 +1164,11 @@ AgEAAAAAAAAAVQAAAAAAAAAAAAAAAAAAWNg
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="repeat" catalog="system" width="128" height="99"/>
+        <image name="speaker.2.fill" catalog="system" width="128" height="97"/>
         <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="pieChartColor2">
+            <color red="0.094117647058823528" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

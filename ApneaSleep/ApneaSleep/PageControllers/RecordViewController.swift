@@ -46,6 +46,11 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         self.audioClear.isHidden = true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     func getDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -114,7 +119,28 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             let formattedSeconds = (self!.time / 36000)
             let formattedMinutes = ((self!.time % 3600) / 60)
             let formattedHour = ((self!.time % 3600) % 60)
-            self!.timerLabel.text = "Tempo de Gravação: \(formattedSeconds):\(formattedMinutes):\(formattedHour) horas"
+            
+            var zeroSeconds = ""
+            var zeroMinutes = ""
+            var zeroHours = ""
+            
+            if(formattedSeconds < 10){
+                zeroSeconds = "0"
+            }else{
+                zeroSeconds = ""
+            }
+            if (formattedMinutes < 10){
+                zeroMinutes = "0"
+            }else{
+                zeroMinutes = ""
+            }
+            if (formattedHour < 10){
+                zeroHours = "0"
+            }else{
+                zeroHours = ""
+            }
+            self!.timerLabel.text =
+                "Tempo de Gravação: \(zeroSeconds)\(formattedSeconds):\(zeroMinutes)\(formattedMinutes):\(zeroHours)\(formattedHour) horas"
         })
     }
     

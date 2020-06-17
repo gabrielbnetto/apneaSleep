@@ -11,7 +11,7 @@ target 'ApneaSleep' do
     pod 'Firebase/Analytics'
     pod 'SwiftKeychainWrapper'
     pod 'lottie-ios'
-    pod 'Charts'
     pod 'SwiftyJSON', '~> 4.0'
+    pod 'IQKeyboardManagerSwift'
     
 end

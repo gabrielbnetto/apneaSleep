@@ -9,57 +9,61 @@
 import UIKit
 import SwiftKeychainWrapper
 import Lottie
-import Charts
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var moonLoader: AnimationView!
     @IBOutlet weak var sleepQualityImage: AnimationView!
-    @IBOutlet weak var sleepQualityLabel: UILabel!
-    @IBOutlet weak var pieChart: PieChartView!
-    @IBOutlet weak var loadingLabel: UILabel!
-    @IBOutlet weak var hellowLabel: UILabel!
+    @IBOutlet weak var personTalking: AnimationView!
+    @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var resultView: UIView!
     
     var helloName = ""
-    var sleepQualityEntry = PieChartDataEntry(value: 0)
-    var sleepQualityEntry2 = PieChartDataEntry(value: 0)
-    var qualitySleepEntries = [PieChartDataEntry]()
+    var checkMarkAnimationWalk = AnimationView()
     
     override func viewDidLoad() {
-        pieChart.isHidden = true
         super.viewDidLoad()
+        viewShadow()
+        self.resultView.isHidden = true
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.NAME.rawValue){
-            hellowLabel.text = "Olá " + userName + "!"
+            helloLabel.text = "Olá " + userName + "!"
         }
-        startAnimation(animation: "moonLoader", label: loadingLabel, view: moonLoader)
+        startAnimation(animation: "moonLoader", view: moonLoader)
+        self.startAnimation(animation: "sleepQualityImage", view: self.sleepQualityImage)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.pieChart.isHidden = false
             self.moonLoader.isHidden = true
-            self.createChart()
-            self.startAnimation(animation: "sleepQualityImage", label: self.sleepQualityLabel, view: self.sleepQualityImage)
+            self.resultView.isHidden = false
+            self.startAnimation(animation: "sleepQualityImage", view: self.sleepQualityImage)
         }
     }
     
-    func createChart() {
-        self.pieChart.chartDescription?.text = ""
-        self.sleepQualityEntry.value = 75
-        self.sleepQualityEntry.label = "Quality \(self.sleepQualityEntry.value)"
-        self.sleepQualityEntry2.value = 25
-        self.sleepQualityEntry2.label = ""
-        self.qualitySleepEntries = [self.sleepQualityEntry, self.sleepQualityEntry2]
-        let chartDataSet = PieChartDataSet(entries: self.qualitySleepEntries, label: nil)
-        chartDataSet.drawValuesEnabled = false
-        let chartData = PieChartData(dataSet: chartDataSet)
-        chartDataSet.colors = [UIColor(named: "pieChartColor"), UIColor(named: "pieChartColor2")]  as! [NSUIColor]
-//        pieChart.centerText = "amsosmak"
-        pieChart.transparentCircleColor = nil
-        pieChart.holeColor = nil
-        pieChart.data = chartData
-        
+    override func viewWillAppear(_ animated: Bool) {
+        self.startWalkingAnimation(animation: "personTalking", view: self.personTalking)
+        self.startAnimation(animation: "sleepQualityImage", view: self.sleepQualityImage)
     }
-
-    func startAnimation(animation: String, label: UILabel, view: AnimationView) {
-        label.textAlignment = .center
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.checkMarkAnimationWalk.isHidden = true
+    }
+    
+    func viewShadow() {
+        self.resultView.layer.cornerRadius = 10
+        self.resultView.layer.shadowColor = UIColor.darkGray.cgColor
+        self.resultView.layer.shadowRadius = 10.0
+        self.resultView.layer.shadowOpacity = 0.4
+        self.resultView.layer.shadowOffset = CGSize(width: 3, height: 3)
+    }
+    
+    func startWalkingAnimation(animation: String, view: AnimationView) {
+        self.checkMarkAnimationWalk = AnimationView(name: animation)
+        view.contentMode = .scaleAspectFit
+        view.addSubview(checkMarkAnimationWalk)
+        checkMarkAnimationWalk.frame = view.bounds
+        checkMarkAnimationWalk.loopMode = .loop
+        checkMarkAnimationWalk.play()
+    }
+    
+    func startAnimation(animation: String, view: AnimationView) {
         let checkMarkAnimation = AnimationView(name: animation)
         view.contentMode = .scaleAspectFit
         view.addSubview(checkMarkAnimation)

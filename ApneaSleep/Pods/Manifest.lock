@@ -4,9 +4,6 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.3.0)
   - AppAuth/Core (1.3.0)
   - AppAuth/ExternalUserAgent (1.3.0)
-  - Charts (3.4.0):
-    - Charts/Core (= 3.4.0)
-  - Charts/Core (3.4.0)
   - Firebase/Analytics (6.16.0):
     - Firebase/Core
   - Firebase/Auth (6.16.0):
@@ -94,6 +91,7 @@ PODS:
   - GTMSessionFetcher/Core (1.3.1)
   - GTMSessionFetcher/Full (1.3.1):
     - GTMSessionFetcher/Core (= 1.3.1)
+  - IQKeyboardManagerSwift (6.5.5)
   - lottie-ios (3.1.6)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -105,10 +103,10 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-  - Charts
   - Firebase/Analytics
   - Firebase/Auth
   - GoogleSignIn
+  - IQKeyboardManagerSwift
   - lottie-ios
   - SwiftKeychainWrapper
   - SwiftyJSON (~> 4.0)
@@ -116,7 +114,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
-    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -133,6 +130,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - lottie-ios
     - nanopb
     - PromisesObjC
@@ -141,7 +139,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
-  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   Firebase: 497158b816d0a86fc31babbd05546fcd7e6083ff
   FirebaseAnalytics: cf95d3aab897612783020fbd98401d5366f135ee
   FirebaseAuth: 5ce2b03a3d7fe56b7a6e4c5ec7ff1522890b1d6f
@@ -158,12 +155,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: ba947dd0928af5cf91c5dd890b73b864e122d400
+PODFILE CHECKSUM: 650b2540d735382953a3fac8544d04b8c069c04a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
