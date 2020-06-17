@@ -173,6 +173,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
                     self.audioClear.isHidden = true
                     self.audioName.text = ""
                     mainLoaderController.stop()
+                    self.displayAlert(title: "Sucesso", message: "Audio foi enviado e salvo com sucesso.")
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
