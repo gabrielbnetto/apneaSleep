@@ -10,6 +10,9 @@ import UIKit
 import GoogleSignIn
 import Firebase
 import IQKeyboardManagerSwift
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = "417873552796-3ud03r2po95p9ed9kf72fk9i3fp523uh.apps.googleusercontent.com"
         IQKeyboardManager.shared.enable = true
+        MSAppCenter.start("f2dffb7c-7cf1-4243-84a6-897ce5fd8164", withServices: [
+            MSAnalytics.self,
+            MSCrashes.self
+        ])
         return true
     }
 

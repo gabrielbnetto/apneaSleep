@@ -264,7 +264,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recomendamos que você procure um profissional para verificar se não possui nenhum problema de saúde." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go8-Pf-xHP">
-                                                        <rect key="frame" x="13" y="224" width="335" height="126"/>
+                                                        <rect key="frame" x="13" y="202" width="335" height="148"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -279,6 +279,24 @@
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.13004265084030323" green="0.17769843227695256" blue="0.35732685901958094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jSc-Rj-f4f">
+                                                <rect key="frame" x="8" y="143" width="359" height="408"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64d-rS-IWe" customClass="AnimationView">
+                                                        <rect key="frame" x="51" y="32" width="270" height="184"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nao conseguimos chegar a nenhuma analise referente aos audios gravado, precisamos que seja gravado mais audios." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUs-H3-CUL">
+                                                        <rect key="frame" x="20" y="236" width="318" height="136"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.13004265079999999" green="0.17769843229999999" blue="0.357326859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GLP-ka-nW3" customClass="AnimationView">
                                                 <rect key="frame" x="77" y="623" width="208" height="123"/>
@@ -330,10 +348,14 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="dlg-Nf-UtL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="failAnimation" destination="64d-rS-IWe" id="NiJ-eE-5Y6"/>
                         <outlet property="helloLabel" destination="RPW-an-u3b" id="u7X-33-U8D"/>
                         <outlet property="moonLoader" destination="an0-qU-Ndd" id="Nxu-L1-xm2"/>
+                        <outlet property="nullResultView" destination="jSc-Rj-f4f" id="mLc-T0-ynw"/>
                         <outlet property="personTalking" destination="GLP-ka-nW3" id="bJR-yt-9Mj"/>
-                        <outlet property="resultView" destination="KXP-mo-09O" id="97Y-Dm-H6H"/>
+                        <outlet property="resultLabel1" destination="M9c-5U-fls" id="XEN-UI-1ZU"/>
+                        <outlet property="resultLabel2" destination="go8-Pf-xHP" id="fry-Au-Ukm"/>
+                        <outlet property="resultView" destination="KXP-mo-09O" id="418-j6-30v"/>
                         <outlet property="sleepQualityImage" destination="5g5-00-Dgf" id="qq0-Zb-ivq"/>
                     </connections>
                 </viewController>

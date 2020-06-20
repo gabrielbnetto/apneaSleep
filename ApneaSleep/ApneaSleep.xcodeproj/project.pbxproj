@@ -34,6 +34,7 @@
 		44F9002C2443AD500021AC23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9002B2443AD500021AC23 /* User.swift */; };
 		DB7E4D3724996F32000B4AE7 /* soundGif.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7E4D3524996F32000B4AE7 /* soundGif.json */; };
 		DB7E4D3824996F32000B4AE7 /* personTalking.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7E4D3624996F32000B4AE7 /* personTalking.json */; };
+		DB86D363249D395B001D762E /* failAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB86D362249D395A001D762E /* failAnimation.json */; };
 		DBDB10B42497E9CA007E0271 /* ListAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */; };
 		DBDB10B62497F3B3007E0271 /* AudioList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B52497F3B3007E0271 /* AudioList.swift */; };
 		DBDB10B824981828007E0271 /* AudioDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B724981828007E0271 /* AudioDetailViewController.swift */; };
@@ -71,6 +72,7 @@
 		78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApneaSleep.release.xcconfig"; path = "Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep.release.xcconfig"; sourceTree = "<group>"; };
 		DB7E4D3524996F32000B4AE7 /* soundGif.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = soundGif.json; sourceTree = "<group>"; };
 		DB7E4D3624996F32000B4AE7 /* personTalking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = personTalking.json; sourceTree = "<group>"; };
+		DB86D362249D395A001D762E /* failAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failAnimation.json; sourceTree = "<group>"; };
 		DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAudioViewController.swift; sourceTree = "<group>"; };
 		DBDB10B52497F3B3007E0271 /* AudioList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioList.swift; sourceTree = "<group>"; };
 		DBDB10B724981828007E0271 /* AudioDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetailViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				44528A72243C2DC200AF3C02 /* mainImage.json */,
 				DB7E4D3624996F32000B4AE7 /* personTalking.json */,
 				DB7E4D3524996F32000B4AE7 /* soundGif.json */,
+				DB86D362249D395A001D762E /* failAnimation.json */,
 			);
 			path = Gifs;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				44D61731240EC603006B5B6E /* LaunchScreen.storyboard in Resources */,
 				44278B5F241AA182001F9E59 /* credentials.plist in Resources */,
 				44DD878C241AAEA500CE2A0F /* GoogleService-Info.plist in Resources */,
+				DB86D363249D395B001D762E /* failAnimation.json in Resources */,
 				44528A6E243BFFFC00AF3C02 /* mailLoader.json in Resources */,
 				DB7E4D3724996F32000B4AE7 /* soundGif.json in Resources */,
 				44528A73243C2DC200AF3C02 /* mainImage.json in Resources */,
@@ -511,15 +515,18 @@
 			baseConfigurationReference = 4077DE105CA393D8D500BC6A /* Pods-ApneaSleep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86XL27PVL7;
 				INFOPLIST_FILE = ApneaSleep/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcc.ApneaSleep;
 				PRODUCT_NAME = "Apnea Sleep";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -530,15 +537,18 @@
 			baseConfigurationReference = 78B7442622EFDEB2EA48E667 /* Pods-ApneaSleep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86XL27PVL7;
 				INFOPLIST_FILE = ApneaSleep/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcc.ApneaSleep;
 				PRODUCT_NAME = "Apnea Sleep";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
