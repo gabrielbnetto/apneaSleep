@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = "417873552796-3ud03r2po95p9ed9kf72fk9i3fp523uh.apps.googleusercontent.com"
         IQKeyboardManager.shared.enable = true
-        MSAppCenter.start("f2dffb7c-7cf1-4243-84a6-897ce5fd8164", withServices: [
+        MSAppCenter.start("69604849-536a-4973-baf0-f6c6778aa2ce", withServices: [
             MSAnalytics.self,
             MSCrashes.self,
             MSDistribute.self
