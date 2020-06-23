@@ -23,6 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>appcenter-f2dffb7c-7cf1-4243-84a6-897ce5fd8164</string>
 				<string>com.googleusercontent.apps.417873552796-3ud03r2po95p9ed9kf72fk9i3fp523uh</string>
 			</array>
 		</dict>

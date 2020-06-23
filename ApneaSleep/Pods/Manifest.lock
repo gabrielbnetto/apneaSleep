@@ -12,6 +12,8 @@ PODS:
   - AppCenter/Core (3.2.0)
   - AppCenter/Crashes (3.2.0):
     - AppCenter/Core
+  - AppCenter/Distribute (3.2.0):
+    - AppCenter/Core
   - Firebase/Analytics (6.16.0):
     - Firebase/Core
   - Firebase/Auth (6.16.0):
@@ -112,6 +114,7 @@ PODS:
 
 DEPENDENCIES:
   - AppCenter
+  - AppCenter/Distribute
   - Firebase/Analytics
   - Firebase/Auth
   - GoogleSignIn
@@ -173,6 +176,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: c6bbdccf8cad9b713225738ce8bffb469424946d
+PODFILE CHECKSUM: ea8066e7875b2a02d0b6edd3fbe66bac020cc1a2
 
 COCOAPODS: 1.9.3
