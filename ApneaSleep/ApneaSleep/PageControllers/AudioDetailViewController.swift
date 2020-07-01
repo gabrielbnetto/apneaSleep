@@ -10,15 +10,14 @@ import UIKit
 import Lottie
 
 class AudioDetailViewController: UIViewController {
-    var audio = AudioList(audioName: "", audioDate: "", audioId: "")
+    var audio = AudioList(audioName: "", username: "", audioId: "", status: "", inclusionDate: "", finishedProcessingDate: "", possibleSpeech: "", didSpeak: "")
     @IBOutlet weak var audioNameLabel: UILabel!
     @IBOutlet weak var mainImage: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Olha so: \(audio.audioId)")
+        print("Olha so: \(audio)")
         audioNameLabel.text = audio.audioName
-        audioNameLabel.textAlignment = .center
         startAnimation()
     }
     

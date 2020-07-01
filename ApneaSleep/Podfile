@@ -13,7 +13,5 @@ target 'ApneaSleep' do
     pod 'lottie-ios'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'IQKeyboardManagerSwift'
-    pod 'AppCenter'
-    pod 'AppCenter/Distribute'
     
 end

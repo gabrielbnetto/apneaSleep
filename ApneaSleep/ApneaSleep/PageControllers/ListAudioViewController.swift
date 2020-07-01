@@ -8,23 +8,14 @@
 
 import UIKit
 import os.log
+import SwiftyJSON
 
 class ListAudioViewController: UIViewController {
     var audios = [AudioList]()
-    
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleAudios()
-    }
-    
-    private func loadSampleAudios(){
-        let audio1 = AudioList(audioName: "Teste1", audioDate: "27/11/1998", audioId: "1")
-        let audio2 = AudioList(audioName: "Teste2", audioDate: "27/11/1998", audioId: "1")
-        let audio3 = AudioList(audioName: "Teste3", audioDate: "27/11/1998", audioId: "1")
-        let audio4 = AudioList(audioName: "Teste4", audioDate: "27/11/1998", audioId: "1")
-        
-        audios += [audio1, audio2, audio3, audio4]
     }
     
 }
@@ -45,7 +36,15 @@ extension ListAudioViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.selectionStyle = .none
         cell.audioName.text = audios[indexPath.row].audioName
-        cell.audioDate.text = audios[indexPath.row].audioDate
+        switch audios[indexPath.row].status {
+            case "F":
+                cell.audioStatus.text = "Analisado"
+            case "E":
+                cell.audioStatus.text = "Erro"
+            default:
+                cell.audioStatus.text = "None"
+        }
+        cell.audioDate.text = audios[indexPath.row].inclusionDate
         return cell
     }
     
@@ -60,5 +59,6 @@ extension ListAudioViewController: UITableViewDelegate, UITableViewDataSource {
 class AudioViewCell: UITableViewCell{
     @IBOutlet weak var audioName: UILabel!
     @IBOutlet weak var audioDate: UILabel!
+    @IBOutlet weak var audioStatus: UILabel!
     var id: String = ""
 }

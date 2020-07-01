@@ -317,8 +317,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="sendMail:" destination="Nsl-9Y-opC" eventType="touchUpInside" id="HhA-pC-IDg"/>
-                                                    <segue destination="NC2-bp-LSH" kind="show" id="pnT-dm-8mU"/>
+                                                    <action selector="goToListPage" destination="svt-wt-NXy" eventType="touchUpInside" id="Rw5-DA-9BZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -357,6 +356,7 @@
                         <outlet property="resultLabel2" destination="go8-Pf-xHP" id="fry-Au-Ukm"/>
                         <outlet property="resultView" destination="KXP-mo-09O" id="418-j6-30v"/>
                         <outlet property="sleepQualityImage" destination="5g5-00-Dgf" id="qq0-Zb-ivq"/>
+                        <segue destination="NC2-bp-LSH" kind="show" identifier="listAudios" id="Yp5-ty-XR1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1S-Va-IdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -386,7 +386,7 @@
                                             <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymw-xR-ssg">
-                                            <rect key="frame" x="80" y="19" width="135" height="24"/>
+                                            <rect key="frame" x="80" y="19" width="265" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -399,6 +399,13 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status do audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbS-Sp-H52">
+                                            <rect key="frame" x="304" y="50" width="66" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" name="pieChartColor2"/>
                                 </tableViewCellContentView>
@@ -406,6 +413,7 @@
                                 <connections>
                                     <outlet property="audioDate" destination="tJC-XQ-I1d" id="Th7-6x-zwh"/>
                                     <outlet property="audioName" destination="ymw-xR-ssg" id="gti-gy-72H"/>
+                                    <outlet property="audioStatus" destination="AbS-Sp-H52" id="eC8-zE-g39"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -440,7 +448,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-tw-jfn" customClass="AnimationView">
                                                 <rect key="frame" x="0.0" y="-53" width="375" height="247"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-xT-v5e">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-xT-v5e">
                                                         <rect key="frame" x="10" y="172" width="358" height="77"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="77" id="yXm-JP-g5h"/>

@@ -61,6 +61,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
             }else{
                 if let currentUser = Auth.auth().currentUser {
 
+//                    let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: currentUser.photoURL!.absoluteString, uid: "2")
                     let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
                     
                         KeychainWrapper.standard.set(user.username, forKey: Keys.USERNAME.rawValue)
