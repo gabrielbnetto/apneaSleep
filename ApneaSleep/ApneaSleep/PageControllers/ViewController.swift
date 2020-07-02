@@ -90,7 +90,9 @@ class ViewController: UIViewController, GIDSignInDelegate {
                     self.performSegue(withIdentifier: "userLogged", sender: nil)
                 }
             case false:
-                self.displayAlert()
+                DispatchQueue.main.async {
+                    self.displayAlert()
+                }
             }
         })
     }
@@ -99,8 +101,6 @@ class ViewController: UIViewController, GIDSignInDelegate {
         let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        DispatchQueue.main.async {
-            mainLoaderController.stop()
-        }
+        mainLoaderController.stop()
     }
 }

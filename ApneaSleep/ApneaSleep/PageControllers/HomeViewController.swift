@@ -9,6 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import Lottie
+import SwiftyJSON
 
 class HomeViewController: UIViewController {
 
@@ -21,8 +22,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var resultLabel1: UILabel!
     @IBOutlet weak var resultLabel2: UILabel!
     @IBOutlet weak var nullResultView: UIView!
-    
-    var teste = 3
     var helloName = ""
     var checkMarkAnimationWalk = AnimationView()
     
@@ -32,36 +31,36 @@ class HomeViewController: UIViewController {
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.NAME.rawValue){
             helloLabel.text = "Olá " + userName + "!"
         }
+        self.nullResultView.isHidden = true
+        self.resultView.isHidden = true
+        self.startAnimation(animation: "moonLoader", view: self.moonLoader)
+        
         let getRequest = ApiResquest(endpoint: "retrieveAudioListSummary")
         getRequest.get(completion: {result in
             switch result {
                 case .success(let response):
-                    print(response)
+                    DispatchQueue.main.async{
+                        self.moonLoader.isHidden = true
+                        self.startAnimation(animation:
+                            "sleepQualityImage", view: self.sleepQualityImage)
+                        if(response["shouldGoToDoctor"] == "S"){
+                            self.resultView.isHidden = false
+                            self.resultLabel1.text = "Você está falando durante seu sono."
+                            self.resultLabel2.text = "Recomendamos que você procure um profissional para verificar se não possui nenhum problema de saúde."
+                        }else if (response["shouldGoToDoctor"] == "N"){
+                            self.resultView.isHidden = false
+                            self.resultLabel1.text = "Você não está falando durante seu sono."
+                            self.resultLabel2.text = "Mesmo com este resultado, a análise ainda esta suscetível a erros, caso sinta algo estranho, recomendamos que procure um profissional da área."
+                        }else{
+                            self.startAnimation(animation: "failAnimation", view: self.failAnimation)
+                            self.resultView.isHidden = true
+                            self.nullResultView.isHidden = false
+                        }
+                    }
                 case .failure(let error):
                     print(error)
             }
         })
-        startAnimation(animation: "moonLoader", view: moonLoader)
-        self.startAnimation(animation: "sleepQualityImage", view: self.sleepQualityImage)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.moonLoader.isHidden = true
-            self.startAnimation(animation:
-                "sleepQualityImage", view: self.sleepQualityImage)
-            if(self.teste == 1){
-                self.resultView.isHidden = false
-                self.resultLabel1.text = "Você está falando durante seu sono."
-                self.resultLabel2.text = "Recomendamos que você procure um profissional para verificar se não possui nenhum problema de saúde."
-            }else if (self.teste == 2){
-                self.resultView.isHidden = false
-                self.resultLabel1.text = "Você não está falando durante seu sono."
-                self.resultLabel2.text = "Mesmo com este resultado, a análise ainda esta suscetível a erros, caso sinta algo estranho, recomendamos que procure um profissional da área."
-            }else{
-                self.startAnimation(animation: "failAnimation", view: self.failAnimation)
-                self.resultView.isHidden = true
-                self.nullResultView.isHidden = false
-            }
-         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,19 +107,21 @@ class HomeViewController: UIViewController {
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
-                        let arrayType = response.arrayValue.map{
-                            AudioList(audioName: $0["audioName"].stringValue,
-                                      username:$0["username"].stringValue,
-                                      audioId: $0["audioId"].stringValue,
-                                      status: $0["status"].stringValue,
-                                      inclusionDate: $0["inclusionDate"].stringValue,
-                                      finishedProcessingDate: $0["finishedProcessingDate"].stringValue,
-                                      possibleSpeech: $0["possibleSpeech"].stringValue,
-                                      didSpeak: $0["didSpeak"].stringValue
-                            )
+                        var arrayAudio = [AudioList]()
+                        for (_, audioList):(String, JSON) in response{
+                            let audioAnalisys = JSON(audioList["audioAnalisys"])
+                            arrayAudio.append(AudioList(audioName: audioList["audioName"].stringValue,
+                                      username: audioList["username"].stringValue,
+                                      audioId: audioList["audioId"].stringValue,
+                                      status: audioList["status"].stringValue,
+                                      inclusionDate: audioList["inclusionDate"].stringValue,
+                                      finishedProcessingDate: audioList["finishedProcessingDate"].stringValue,
+                                      possibleSpeech: audioAnalisys["possibleSpeech"].stringValue, didSpeak: audioAnalisys["didSpeak"].stringValue
+                            ))
+                            
                         }
                         mainLoaderController.stop()
-                        self.performSegue(withIdentifier: "listAudios", sender: arrayType)
+                        self.performSegue(withIdentifier: "listAudios", sender: arrayAudio)
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
