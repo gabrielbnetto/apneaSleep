@@ -35,7 +35,6 @@ struct ApiResquest {
                 do{
                     let json = try JSON(data: jsonData)
                     let userToken = json["jwt"].stringValue
-                    print(userToken)
                     KeychainWrapper.standard.set(userToken, forKey: Keys.JWT.rawValue)
                     completion(true)
                 } catch {

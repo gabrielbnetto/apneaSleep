@@ -16,6 +16,30 @@ class ListAudioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for audio in audios{
+            var convertedDate = ""
+            
+            let dateComponents = audio.inclusionDate.components(separatedBy: "T")
+            let splitDate = dateComponents[0]
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            
+            let newFormatter = DateFormatter()
+            newFormatter.dateFormat = "MMM d, yyyy"
+            
+            if let date = formatter.date(from: splitDate){
+                convertedDate = newFormatter.string(from: date)
+            }
+            
+            audio.inclusionDate = convertedDate
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if(audios.count == 0){
+            audios.append(AudioList(audioName: "Não há audios cadastrados", username: "", audioId: "", status: "", inclusionDate: "", finishedProcessingDate: "", possibleSpeech: "", didSpeak: ""))
+        }
     }
     
 }
@@ -42,7 +66,7 @@ extension ListAudioViewController: UITableViewDelegate, UITableViewDataSource {
             case "E":
                 cell.audioStatus.text = "Erro"
             default:
-                cell.audioStatus.text = "None"
+                cell.audioStatus.text = ""
         }
         cell.audioDate.text = audios[indexPath.row].inclusionDate
         return cell
@@ -54,7 +78,6 @@ extension ListAudioViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
-
 
 class AudioViewCell: UITableViewCell{
     @IBOutlet weak var audioName: UILabel!

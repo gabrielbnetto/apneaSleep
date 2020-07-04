@@ -15,19 +15,23 @@ class AudioDetailViewController: UIViewController {
     @IBOutlet weak var mainImage: AnimationView!
     @IBOutlet weak var speechLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var audioDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Olha so: \(audio)")
         audioNameLabel.text = audio.audioName
         if(audio.status == "E"){
-            statusLabel.text = "Erro"
+            statusLabel.text = "Status: Erro"
+        }else if(audio.status == ""){
+            statusLabel.text = ""
         }
-        if(audio.audioAnalysis.possibleSpeech == "" || audio.audioAnalysis.possibleSpeech == nil){
-            speechLabel.text = "Não conseguimos detectar nenhuma fala do seu audio"
+        
+        if(audio.audioAnalysis.possibleSpeech == ""){
+            speechLabel.text = "Não conseguimos detectar nenhuma fala do seu audio."
         }else{
             speechLabel.text = audio.audioAnalysis.possibleSpeech
         }
+        audioDate.text = audio.inclusionDate
         speechLabel.sizeToFit()
         startAnimation()
     }

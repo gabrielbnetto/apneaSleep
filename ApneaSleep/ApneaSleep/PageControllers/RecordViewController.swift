@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import SwiftKeychainWrapper
 
-class RecordViewController: UIViewController, AVAudioRecorderDelegate {
+class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFieldDelegate {
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -38,12 +38,19 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         
         recordingSession = AVAudioSession.sharedInstance()
         AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
-            if hasPermission { print("Tem persmissao")}
+            if hasPermission {
+                print("Tem persmissao")
+            } else {
+                DispatchQueue.main.async {
+                    self.displayAlert(title: "Problema", message: "Você não permitiu que o ApneaSleep grave seu audio.")
+                }
+            }
         }
         
         self.audioName.isHidden = true
         self.resendButton.isHidden = true
         self.audioClear.isHidden = true
+        audioName.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -69,10 +76,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         if audioRecorder == nil {
             numberOfRecords += 1
             self.fileName = getDirectory().appendingPathComponent("record\(numberOfRecords).m4a")
-
-            print("@@@@@@")
-            print(self.fileName)
-            
             let settings = [ AVFormatIDKey : kAudioFormatAppleLossless,
                              AVEncoderBitRateKey: 44100.0,
                              AVNumberOfChannelsKey: 1,
@@ -106,8 +109,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func transformToBase64andSendAudio(){
-        if let base64String = try? Data(contentsOf: self.fileName).base64EncodedString() {                self.base64 = base64String
-    //            print(self.base64)
+        if let base64String = try? Data(contentsOf: self.fileName).base64EncodedString() {
+            self.base64 = base64String
             self.sendAudio(encodedAudio: base64String)
         }
     }
@@ -124,21 +127,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             var zeroMinutes = ""
             var zeroHours = ""
             
-            if(formattedSeconds < 10){
-                zeroSeconds = "0"
-            }else{
-                zeroSeconds = ""
-            }
-            if (formattedMinutes < 10){
-                zeroMinutes = "0"
-            }else{
-                zeroMinutes = ""
-            }
-            if (formattedHour < 10){
-                zeroHours = "0"
-            }else{
-                zeroHours = ""
-            }
+            if(formattedSeconds < 10){ zeroSeconds = "0" }
+            if (formattedMinutes < 10){ zeroMinutes = "0" }
+            if (formattedHour < 10){ zeroHours = "0" }
             self!.timerLabel.text =
                 "Tempo de Gravação: \(zeroSeconds)\(formattedSeconds):\(zeroMinutes)\(formattedMinutes):\(zeroHours)\(formattedHour) horas"
         })
@@ -154,9 +145,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     func notRecordingLabels() {
         timerLabel.text = "Tempo de Gravação: 00:00:00 horas"
-        timerLabel.textAlignment = .center
         recordingLabel.text = "Não está gravando"
-        self.recordingLabel.textAlignment = .center
         self.buttonsEnabled(play: true, stop: false)
     }
     
@@ -165,9 +154,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         let postRequest = ApiResquest(endpoint: "receiveEncodedAudio")
         postRequest.postAudio(audio, completion: {result in
             switch result {
-            case .success(let sucess):
+            case .success( _):
                 DispatchQueue.main.async {
-                    print("User: \(sucess)")
                     self.resendButton.isHidden = true
                     self.audioName.isHidden = true
                     self.audioClear.isHidden = true
@@ -199,5 +187,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         self.audioName.isHidden = true
         self.audioClear.isHidden = true
         self.audioName.text = ""
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let preText = textField.text as NSString?,
+            preText.replacingCharacters(in: range, with: string).count <= 20 else {
+            return false
+        }
+        return true
     }
 }

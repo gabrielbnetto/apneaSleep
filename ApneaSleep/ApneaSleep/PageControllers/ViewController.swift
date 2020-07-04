@@ -17,9 +17,6 @@ class ViewController: UIViewController, GIDSignInDelegate {
 
     @IBOutlet weak var mainImage: AnimationView!
     @IBOutlet weak var loginButton: UIButton!
-    var nome: String = ""
-    var email: String = ""
-    var pictureUrl: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +43,11 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
-            mainLoaderController.stop()
-            return
+            DispatchQueue.main.async {
+                self.displayAlert()
+                mainLoaderController.stop()
+                return
+            }
         }
         
         guard let authentication = user.authentication else {return}
@@ -56,13 +56,16 @@ class ViewController: UIViewController, GIDSignInDelegate {
         Auth.auth().signIn(with: credential, completion: { (authResult, error) in
             
             if(error != nil){
-                mainLoaderController.stop()
-                return
+                DispatchQueue.main.async {
+                    self.displayAlert()
+                    mainLoaderController.stop()
+                    return
+                }
             }else{
                 if let currentUser = Auth.auth().currentUser {
 
-//                    let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: currentUser.photoURL!.absoluteString, uid: "2")
-                    let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
+                    let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: currentUser.photoURL!.absoluteString, uid: "2")
+//                    let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
                     
                         KeychainWrapper.standard.set(user.username, forKey: Keys.USERNAME.rawValue)
                         KeychainWrapper.standard.set(user.uid, forKey: Keys.UID.rawValue)

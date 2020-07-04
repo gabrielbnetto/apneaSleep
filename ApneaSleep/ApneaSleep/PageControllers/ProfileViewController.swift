@@ -24,20 +24,14 @@ class ProfileViewController: UIViewController {
         }
         if let userName: String = KeychainWrapper.standard.string(forKey: Keys.NAME.rawValue){
             self.nameLabel.text = userName
-            self.nameLabel.textAlignment = .center
-
         }
         if let userEmail: String = KeychainWrapper.standard.string(forKey: Keys.USERNAME.rawValue){
             self.emailLabel.text = userEmail
-            self.emailLabel.textAlignment = .center
-            
         }
     }
     
     func setImage(from url: String) {
         guard let imageURL = URL(string: url) else { return }
-
-        // To not cause a deadlock in UI!
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
 
@@ -62,6 +56,32 @@ class ProfileViewController: UIViewController {
     
     @IBAction func sendMail(_ sender: Any) {
         mailLoaderController.start()
+//        let getRequest = ApiResquest(endpoint: "sendAudioDataEmail")
+//        getRequest.get(completion: {result in
+//            switch result {
+//                case .success( _):
+//                    DispatchQueue.main.async{
+//                        mailLoaderController.stop()
+//                        self.displayAlert(title: "Sucesso", message: "Email enviado com sucesso!")
+//                    }
+//                case .failure(let error):
+//                    DispatchQueue.main.async{
+//                        mailLoaderController.stop()
+//                        self.displayAlert(title: "Erro", message: "Ocorreu um erro ao enviar email! Por favor, tente novamente em alguns segundos.")
+//                        print(error)
+//                    }
+//            }
+//        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            mailLoaderController.stop()
+        }
+    }
+    
+    
+    func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
