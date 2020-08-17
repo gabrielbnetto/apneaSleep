@@ -15,7 +15,6 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Thread.sleep(forTimeInterval: 3.0)
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = "417873552796-3ud03r2po95p9ed9kf72fk9i3fp523uh.apps.googleusercontent.com"
         IQKeyboardManager.shared.enable = true

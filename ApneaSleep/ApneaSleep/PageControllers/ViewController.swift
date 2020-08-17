@@ -12,6 +12,7 @@ import FirebaseAuth
 import SwiftKeychainWrapper
 import Lottie
 import SwiftyJSON
+import Pastel
 
 class ViewController: UIViewController, GIDSignInDelegate {
 
@@ -25,6 +26,27 @@ class ViewController: UIViewController, GIDSignInDelegate {
         startAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool)  {
+        startPastelColors()
+    }
+    
+    func startPastelColors(){
+        let pastelView = PastelView(frame: view.bounds)
+        pastelView.startPastelPoint = .bottomLeft
+        pastelView.endPastelPoint = .topRight
+        pastelView.animationDuration = 3.0
+        pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
+                              UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
+                              UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+                              UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+                              UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+                              UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+                              UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+
+        pastelView.startAnimation()
+        view.insertSubview(pastelView, at: 0)
+    }
+    
     func startAnimation() {
         let checkMarkAnimation =  AnimationView(name: "mainImage")
         mainImage.contentMode = .scaleAspectFit
@@ -35,6 +57,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     @IBAction func signInButtonClicked() {
+//        let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: "12345", uid: "2")
+//        self.authenticateUser(user: user)
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
         mainLoaderController.start()
@@ -45,9 +69,13 @@ class ViewController: UIViewController, GIDSignInDelegate {
         if error != nil {
             DispatchQueue.main.async {
                 self.displayAlert()
-                mainLoaderController.stop()
                 return
             }
+        }
+
+        if(user == nil){
+            self.displayAlert()
+            return
         }
         
         guard let authentication = user.authentication else {return}
@@ -58,14 +86,12 @@ class ViewController: UIViewController, GIDSignInDelegate {
             if(error != nil){
                 DispatchQueue.main.async {
                     self.displayAlert()
-                    mainLoaderController.stop()
                     return
                 }
             }else{
                 if let currentUser = Auth.auth().currentUser {
 
-                    let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: currentUser.photoURL!.absoluteString, uid: "2")
-//                    let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
+                    let user = User(name: currentUser.displayName!, username: currentUser.email!, pictureUrl: currentUser.photoURL!.absoluteString, uid: currentUser.uid)
                     
                         KeychainWrapper.standard.set(user.username, forKey: Keys.USERNAME.rawValue)
                         KeychainWrapper.standard.set(user.uid, forKey: Keys.UID.rawValue)
@@ -80,8 +106,9 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("User has disconnected")
-        mainLoaderController.stop()
-        self.displayAlert()
+        DispatchQueue.main.async {
+            self.displayAlert()
+        }
     }
     
     func authenticateUser(user: User) {

@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-ApneaSleep/Pods-ApneaSleep-resources.sh
-${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle
 ${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle

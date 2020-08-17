@@ -23,17 +23,46 @@ class AudioDetailViewController: UIViewController {
         if(audio.status == "E"){
             statusLabel.text = "Status: Erro"
         }else if(audio.status == ""){
-            statusLabel.text = ""
+            statusLabel.text = " "
         }
         
-        if(audio.audioAnalysis.possibleSpeech == ""){
-            speechLabel.text = "Não conseguimos detectar nenhuma fala do seu audio."
-        }else{
+        if(audio.audioAnalysis.possibleSpeech != ""){
             speechLabel.text = audio.audioAnalysis.possibleSpeech
         }
         audioDate.text = audio.inclusionDate
         speechLabel.sizeToFit()
         startAnimation()
+    }
+    
+    @IBAction func sendMail(_ sender: Any) {
+        if(audio.status == "E"){
+            DispatchQueue.main.async{
+                self.displayAlert(title: "Problema", message: "Infelizmente o audio que selecionou para enviar o Email está com erro! Solicite um que foi analisado!")
+            }
+            return;
+        }
+        
+        mailLoaderController.start()
+//        let audioEmail = AudioEmail(audioId: self.audio.audioId)
+//        let postRequest = ApiResquest(endpoint: "sendAudioDataEmail")
+//        postRequest.postEmail(audioEmail, completion: {result in
+//            switch result {
+//                case .success( _):
+//                    DispatchQueue.main.async{
+//                        mailLoaderController.stop()
+//                        self.displayAlert(title: "Sucesso", message: "Email enviado com sucesso!")
+//                    }
+//                case .failure(let error):
+//                    DispatchQueue.main.async{
+//                        mailLoaderController.stop()
+//                        self.displayAlert(title: "Erro", message: "Ocorreu um erro ao enviar email! Por favor, tente novamente em alguns segundos.")
+//                        print(error)
+//                    }
+//            }
+//        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            mailLoaderController.stop()
+        }
     }
     
     func startAnimation() {
@@ -43,5 +72,11 @@ class AudioDetailViewController: UIViewController {
         checkMarkAnimation.frame = self.mainImage.bounds
         checkMarkAnimation.loopMode = .loop
         checkMarkAnimation.play()
+    }
+    
+    func displayAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

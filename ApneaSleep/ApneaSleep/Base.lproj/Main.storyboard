@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3k-jR-ZLH">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="Q7b-U4-UuE">
+            <objects>
+                <viewController id="f3k-jR-ZLH" customClass="SplashViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EIa-1n-lgj" customClass="O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p07-0F-qGV" customClass="AnimationView">
+                                <rect key="frame" x="1" y="186" width="374" height="489"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c24-Yr-jyq">
+                                <rect key="frame" x="50" y="69" width="276" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apnea Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvc-v5-Tun">
+                                        <rect key="frame" x="44" y="0.0" width="199" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="38"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.094117647058823528" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="HXw-Op-LYx"/>
+                    </view>
+                    <connections>
+                        <outlet property="splashAnimation" destination="p07-0F-qGV" id="VP9-cK-WhG"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="splashToHome" modalPresentationStyle="fullScreen" id="aCK-pz-CIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-nL-bE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922.39999999999998" y="136.69950738916256"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -36,7 +79,6 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="nfU-B6-xzk" firstAttribute="leading" secondItem="VOc-hW-30o" secondAttribute="leading" constant="110" id="YSA-0v-m6M"/>
                                                     <constraint firstAttribute="trailing" secondItem="nfU-B6-xzk" secondAttribute="trailing" constant="110" id="sEd-4S-NFJ"/>
@@ -57,7 +99,7 @@
                                                         <rect key="frame" x="0.0" y="59" width="375" height="85"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O Apnea Sleep ajuda você a monitorar seu sono, com o objetivo de analisar se você tem ou não Apena do sono." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-Qd-hCz">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O Apnea Sleep ajuda você a monitorar seu sono, com o objetivo de analisar se você fala ou não enquanto dorme." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-Qd-hCz">
                                                                 <rect key="frame" x="64" y="8" width="306" height="77"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -126,7 +168,6 @@
                                                         </subviews>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1176470588" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="qVm-XL-yPx" secondAttribute="trailing" constant="116" id="DlZ-QI-Wsg"/>
                                                     <constraint firstAttribute="height" constant="450" id="EqD-qQ-45K"/>
@@ -154,7 +195,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="xP2-k2-9q3"/>
                                                 </constraints>
@@ -163,7 +203,6 @@
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="3a9-ac-puQ" firstAttribute="leading" secondItem="2uH-Fd-0W6" secondAttribute="leading" id="ZvQ-bj-SFl"/>
                                     <constraint firstItem="3a9-ac-puQ" firstAttribute="trailing" secondItem="2uH-Fd-0W6" secondAttribute="trailing" id="ZxT-Ah-I6H"/>
@@ -175,7 +214,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="t61-oC-dcs"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Gul-uP-YCZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8fc-gA-fd1"/>
                             <constraint firstItem="Gul-uP-YCZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MIY-zs-Z3Q"/>
@@ -184,6 +222,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="XCg-xa-s9U"/>
                     <connections>
                         <outlet property="loginButton" destination="fcA-GE-M0h" id="qWF-Mc-p8n"/>
                         <outlet property="mainImage" destination="6h9-aA-neA" id="Y6r-1a-plD"/>
@@ -335,7 +374,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GLP-ka-nW3" customClass="AnimationView">
                                                 <rect key="frame" x="77" y="623" width="208" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" name="pieChartColor2"/>
+                                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-mh-BLX">
                                                 <rect key="frame" x="21" y="759" width="333" height="40"/>
@@ -355,7 +394,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="pieChartColor2"/>
+                                        <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1012" id="b5C-k2-Xxq"/>
                                         </constraints>
@@ -404,7 +443,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D2X-gT-C1m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="pieChartColor2"/>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AudioViewCell" rowHeight="90" id="xBV-nH-CEQ" customClass="AudioViewCell" customModule="Apnea_Sleep" customModuleProvider="target">
@@ -441,9 +480,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="pieChartColor2"/>
+                                    <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="pieChartColor2"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="audioDate" destination="tJC-XQ-I1d" id="Th7-6x-zwh"/>
                                     <outlet property="audioName" destination="ymw-xR-ssg" id="gti-gy-72H"/>
@@ -482,7 +521,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-tw-jfn" customClass="AnimationView">
                                                 <rect key="frame" x="0.0" y="-53" width="375" height="247"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-xT-v5e">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlq-xT-v5e">
                                                         <rect key="frame" x="10" y="172" width="358" height="77"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="77" id="yXm-JP-g5h"/>
@@ -498,7 +537,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Analisado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwA-6P-pnM">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AudioDate Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwA-6P-pnM">
                                                         <rect key="frame" x="21" y="54" width="164" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -506,7 +545,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" name="pieChartColor2"/>
+                                                <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Qlq-xT-v5e" firstAttribute="top" secondItem="SWd-tw-jfn" secondAttribute="top" constant="172" id="NfS-pO-ntW"/>
                                                     <constraint firstItem="Qlq-xT-v5e" firstAttribute="leading" secondItem="SWd-tw-jfn" secondAttribute="leading" constant="10" id="bvB-o3-M70"/>
@@ -515,21 +554,38 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O que foi dito no audio:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG8-7H-CLh">
-                                                <rect key="frame" x="36" y="202" width="310" height="54"/>
+                                                <rect key="frame" x="36" y="232" width="310" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQu-QT-rGd">
-                                                <rect key="frame" x="27" y="272" width="330" height="667"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Não conseguimos detectar nenhuma fala do seu audio." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQu-QT-rGd">
+                                                <rect key="frame" x="27" y="282" width="330" height="667"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z00-EF-7jp">
+                                                <rect key="frame" x="24" y="193" width="333" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Enviar relatório por email" image="envelope.fill" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sendMail:" destination="rMF-EQ-UFt" eventType="touchUpInside" id="LjB-Gk-g1Z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="pieChartColor2"/>
+                                        <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="SWd-tw-jfn" secondAttribute="trailing" id="5V3-x4-P2h"/>
                                             <constraint firstItem="SWd-tw-jfn" firstAttribute="leading" secondItem="3VE-V4-knq" secondAttribute="leading" id="BB7-Dr-AeY"/>
@@ -549,7 +605,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="52Q-jy-sKq"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" name="pieChartColor2"/>
+                        <color key="backgroundColor" red="0.39588429399984737" green="0.5137951677845034" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="twI-et-sUY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Apnea Sleep" id="Jjg-Pd-eAe"/>
@@ -655,23 +711,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pct-Z3-JL4">
-                                        <rect key="frame" x="21" y="525" width="333" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Enviar relatório por email" image="envelope.fill" catalog="system">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="sendMail:" destination="Nsl-9Y-opC" eventType="touchUpInside" id="ie1-DY-NJK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="8e2-t6-MH8" firstAttribute="top" secondItem="Glf-Hz-bs6" secondAttribute="top" constant="10" id="Hbc-e3-wAM"/>
@@ -840,7 +879,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="pieChartColor2"/>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.090196078430000007" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="TIk-ae-Abx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gravar" image="mic" catalog="system" id="TB2-Td-xmO"/>
@@ -859,6 +898,9 @@
             <point key="canvasLocation" x="3996" y="172"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aCK-pz-CIg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="audio-file" width="170.66667175292969" height="170.66667175292969"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
@@ -1263,8 +1305,5 @@ AgEAAAAAAAAAVQAAAAAAAAAAAAAAAAAAWNg
         <image name="speaker.2.fill" catalog="system" width="128" height="97"/>
         <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="userDefaultImage" width="170.66667175292969" height="170.66667175292969"/>
-        <namedColor name="pieChartColor2">
-            <color red="0.0" green="0.11764705882352941" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
     </resources>
 </document>

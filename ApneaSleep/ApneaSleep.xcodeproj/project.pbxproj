@@ -38,6 +38,9 @@
 		DBDB10B42497E9CA007E0271 /* ListAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */; };
 		DBDB10B62497F3B3007E0271 /* AudioList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B52497F3B3007E0271 /* AudioList.swift */; };
 		DBDB10B824981828007E0271 /* AudioDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B724981828007E0271 /* AudioDetailViewController.swift */; };
+		EE7CECFC24EB04E900FF973B /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7CECFB24EB04E900FF973B /* splashAnimation.json */; };
+		EE7CECFE24EB064000FF973B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CECFD24EB064000FF973B /* SplashViewController.swift */; };
+		EEF5226624C86684007BBAEF /* AudioEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF5226524C86684007BBAEF /* AudioEmail.swift */; };
 		EEFD4D6124AE48F300AF2154 /* notTalkingSleep.json in Resources */ = {isa = PBXBuildFile; fileRef = EEFD4D6024AE48F300AF2154 /* notTalkingSleep.json */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAudioViewController.swift; sourceTree = "<group>"; };
 		DBDB10B52497F3B3007E0271 /* AudioList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioList.swift; sourceTree = "<group>"; };
 		DBDB10B724981828007E0271 /* AudioDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetailViewController.swift; sourceTree = "<group>"; };
+		EE7CECFB24EB04E900FF973B /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
+		EE7CECFD24EB064000FF973B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		EEF5226524C86684007BBAEF /* AudioEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEmail.swift; sourceTree = "<group>"; };
 		EEFD4D6024AE48F300AF2154 /* notTalkingSleep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notTalkingSleep.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				EEFD4D6024AE48F300AF2154 /* notTalkingSleep.json */,
+				EE7CECFB24EB04E900FF973B /* splashAnimation.json */,
 				44528A74243C501B00AF3C02 /* sleepQualityImage.json */,
 				44528A72243C2DC200AF3C02 /* mainImage.json */,
 				DB7E4D3624996F32000B4AE7 /* personTalking.json */,
@@ -131,6 +138,7 @@
 				44E67D1D243AB25B00EE143B /* RecordViewController.swift */,
 				DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */,
 				DBDB10B724981828007E0271 /* AudioDetailViewController.swift */,
+				EE7CECFD24EB064000FF973B /* SplashViewController.swift */,
 			);
 			path = PageControllers;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 				44F9002B2443AD500021AC23 /* User.swift */,
 				44F09676245091DB007EB1E6 /* Audio.swift */,
 				DBDB10B52497F3B3007E0271 /* AudioList.swift */,
+				EEF5226524C86684007BBAEF /* AudioEmail.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 				44528A75243C501B00AF3C02 /* sleepQualityImage.json in Resources */,
 				44D6172E240EC603006B5B6E /* Assets.xcassets in Resources */,
 				44D6172C240EC602006B5B6E /* Main.storyboard in Resources */,
+				EE7CECFC24EB04E900FF973B /* splashAnimation.json in Resources */,
 				DB7E4D3824996F32000B4AE7 /* personTalking.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +377,8 @@
 				44D61729240EC602006B5B6E /* ViewController.swift in Sources */,
 				44E67D1E243AB25B00EE143B /* RecordViewController.swift in Sources */,
 				DBDB10B62497F3B3007E0271 /* AudioList.swift in Sources */,
+				EEF5226624C86684007BBAEF /* AudioEmail.swift in Sources */,
+				EE7CECFE24EB064000FF973B /* SplashViewController.swift in Sources */,
 				DBDB10B42497E9CA007E0271 /* ListAudioViewController.swift in Sources */,
 				44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */,
 				44F09677245091DB007EB1E6 /* Audio.swift in Sources */,

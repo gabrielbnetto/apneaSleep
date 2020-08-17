@@ -54,30 +54,6 @@ class ProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "userLoggout", sender: nil)
     }
     
-    @IBAction func sendMail(_ sender: Any) {
-        mailLoaderController.start()
-//        let getRequest = ApiResquest(endpoint: "sendAudioDataEmail")
-//        getRequest.get(completion: {result in
-//            switch result {
-//                case .success( _):
-//                    DispatchQueue.main.async{
-//                        mailLoaderController.stop()
-//                        self.displayAlert(title: "Sucesso", message: "Email enviado com sucesso!")
-//                    }
-//                case .failure(let error):
-//                    DispatchQueue.main.async{
-//                        mailLoaderController.stop()
-//                        self.displayAlert(title: "Erro", message: "Ocorreu um erro ao enviar email! Por favor, tente novamente em alguns segundos.")
-//                        print(error)
-//                    }
-//            }
-//        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            mailLoaderController.stop()
-        }
-    }
-    
-    
     func displayAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
