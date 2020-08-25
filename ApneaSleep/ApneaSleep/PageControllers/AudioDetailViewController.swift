@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import Loaf
 
 class AudioDetailViewController: UIViewController {
     var audio = AudioList(audioName: "", username: "", audioId: "", status: "", inclusionDate: "", finishedProcessingDate: "", possibleSpeech: "", didSpeak: "")
@@ -37,7 +38,7 @@ class AudioDetailViewController: UIViewController {
     @IBAction func sendMail(_ sender: Any) {
         if(audio.status == "E"){
             DispatchQueue.main.async{
-                self.displayAlert(title: "Problema", message: "Infelizmente o audio que selecionou para enviar o Email está com erro! Solicite um que foi analisado!")
+                self.displayAlert(message: "O audio selecionado para o envio do email está com erro! \nSolicite um que foi analisado!", type: 2)
             }
             return;
         }
@@ -50,12 +51,12 @@ class AudioDetailViewController: UIViewController {
 //                case .success( _):
 //                    DispatchQueue.main.async{
 //                        mailLoaderController.stop()
-//                        self.displayAlert(title: "Sucesso", message: "Email enviado com sucesso!")
+//                        self.displayAlert(message: "Email enviado com sucesso!", type: 1)
 //                    }
 //                case .failure(let error):
 //                    DispatchQueue.main.async{
 //                        mailLoaderController.stop()
-//                        self.displayAlert(title: "Erro", message: "Ocorreu um erro ao enviar email! Por favor, tente novamente em alguns segundos.")
+//                        self.displayAlert(message: "Ocorreu um erro ao enviar email! Por favor, tente novamente em alguns segundos.", type: 3)
 //                        print(error)
 //                    }
 //            }
@@ -74,9 +75,11 @@ class AudioDetailViewController: UIViewController {
         checkMarkAnimation.play()
     }
     
-    func displayAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    func displayAlert (message: String, type: Int) {
+        switch type {
+            case 1:Loaf(message, state: .custom(.init(backgroundColor: .black, icon: UIImage(named: "sendMail"))), sender: self).show()
+            case 2:Loaf(message, state: .warning, sender: self).show()
+            default:Loaf(message, state: .error, sender: self).show()
+        }
     }
 }

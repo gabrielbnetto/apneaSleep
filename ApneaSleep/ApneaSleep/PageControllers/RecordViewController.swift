@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import SwiftKeychainWrapper
+import Loaf
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFieldDelegate {
     
@@ -39,11 +40,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
         recordingSession = AVAudioSession.sharedInstance()
         AVAudioSession.sharedInstance().requestRecordPermission { (hasPermission) in
             if hasPermission {
-                print("Tem persmissao")
+                print("Tem permissao")
             } else {
-                DispatchQueue.main.async {
-                    self.displayAlert(title: "Problema", message: "Você não permitiu que o ApneaSleep grave seu audio.")
-                }
+                self.displayAlert(message: "Você não permitiu que o ApneaSleep grave seu audio. \nÉ necessário habilitar nas configurações do seu celular!", type: 3)
+                self.buttonsEnabled(play: false, stop: false)
             }
         }
         
@@ -63,10 +63,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
         return paths[0]
     }
     
-    func displayAlert (title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        present(alert, animated: true, completion: nil)
+    func displayAlert (message: String, type: Int) {
+        switch type {
+            case 1: Loaf(message, state: .error, sender: self).show()
+            case 2: Loaf(message, state: .custom(.init(backgroundColor: .black, icon: UIImage(named: "moon"))), sender: self).show()
+            default:Loaf(message, state: .warning, sender: self).show()
+        }
     }
     
     @IBAction func record(_ sender: Any) {
@@ -89,7 +91,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
                 self.timerCount()
             } catch {
                 self.stoppedAudio()
-                displayAlert(title: "Ops!", message: "Ocorreu um erro ao realizar a gravação, por favor, tente novamente.")
+                displayAlert(message: "Ocorreu um erro ao realizar a gravação, por favor, tente novamente.", type: 1)
                 print(error)
             }
         }
@@ -161,11 +163,11 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
                     self.audioClear.isHidden = true
                     self.audioName.text = ""
                     mainLoaderController.stop()
-                    self.displayAlert(title: "Sucesso", message: "Audio foi enviado e salvo com sucesso.")
+                    self.displayAlert(message: "Audio foi salvo com sucesso.", type: 2)
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.displayAlert(title: "Erro", message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.")
+                    self.displayAlert(message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.", type: 1)
                     print("Error: \(error)")
                     mainLoaderController.stop()
                 }
@@ -178,7 +180,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
             mainLoaderController.start()
             self.transformToBase64andSendAudio()
         }else{
-             self.displayAlert(title: "Erro", message: "E necessario informar um nome para o audio!")
+             self.displayAlert(message: "E necessario informar um nome para o audio!", type: 3)
         }
     }
     

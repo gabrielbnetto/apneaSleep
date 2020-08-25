@@ -13,6 +13,7 @@ import SwiftKeychainWrapper
 import Lottie
 import SwiftyJSON
 import Pastel
+import Loaf
 
 class ViewController: UIViewController, GIDSignInDelegate {
 
@@ -58,6 +59,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     @IBAction func signInButtonClicked() {
 //        let user = User(name: "Gabriel Netto", username: "gabrielbnettto@gmail.com", pictureUrl: "12345", uid: "2")
+//        self.performSegue(withIdentifier: "userLogged", sender: nil)
 //        self.authenticateUser(user: user)
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
@@ -128,9 +130,6 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     func displayAlert() {
-        let alert = UIAlertController(title: "Erro", message: "Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        mainLoaderController.stop()
+        Loaf("Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", state: .error, sender: self).show()
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Lottie
 import SwiftyJSON
+import Loaf
 
 class HomeViewController: UIViewController {
 
@@ -160,9 +161,7 @@ class HomeViewController: UIViewController {
     }
     
     func displayAlert(message: String) {
-        let alert = UIAlertController(title: "Erro", message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        Loaf(message, state: .error, presentingDirection: .left, dismissingDirection: .right,sender: self).show()
     }
 
 }

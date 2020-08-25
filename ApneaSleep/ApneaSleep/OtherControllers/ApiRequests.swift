@@ -57,7 +57,7 @@ struct ApiResquest {
             
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
             let httpResponse = response as? HTTPURLResponse
-            if(httpResponse!.statusCode == 403){
+            if(httpResponse != nil && httpResponse!.statusCode == 403){
                 let postRequest = ApiResquest(endpoint: "authenticate")
                 postRequest.authenticateUser(self.setUser(), completion: {result in
                     switch result{
@@ -66,7 +66,7 @@ struct ApiResquest {
                 })
                 completion(.failure(.tokenExpired))
                 return
-            }else if(httpResponse!.statusCode == 200){
+            }else if(httpResponse != nil && httpResponse!.statusCode == 200){
                 do{
                     let json = try JSON(data: data!)
                     completion(.success(json))
@@ -91,7 +91,7 @@ struct ApiResquest {
 
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
                 let httpResponse = response as? HTTPURLResponse
-                if(httpResponse!.statusCode == 403){
+                if(httpResponse != nil && httpResponse!.statusCode == 403){
                     let postRequest = ApiResquest(endpoint: "authenticate")
                     postRequest.authenticateUser(self.setUser(), completion: {result in
                         switch result{
@@ -100,7 +100,7 @@ struct ApiResquest {
                     })
                     completion(.failure(.tokenExpired))
                     return
-                }else if(httpResponse!.statusCode == 200){
+                }else if(httpResponse != nil && httpResponse!.statusCode == 200){
                     completion(.success(true))
                 }else{
                     completion(.failure(.responseProblem))
@@ -123,7 +123,7 @@ struct ApiResquest {
 
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
                 let httpResponse = response as? HTTPURLResponse
-                if(httpResponse!.statusCode == 403){
+                if(httpResponse != nil && httpResponse!.statusCode == 403){
                     let postRequest = ApiResquest(endpoint: "authenticate")
                     postRequest.authenticateUser(self.setUser(), completion: {result in
                         switch result{
@@ -132,7 +132,7 @@ struct ApiResquest {
                     })
                     completion(.failure(.tokenExpired))
                     return
-                }else if(httpResponse!.statusCode == 200){
+                }else if(httpResponse != nil && httpResponse!.statusCode == 200){
                     completion(.success(true))
                 }else{
                     completion(.failure(.responseProblem))
@@ -150,7 +150,10 @@ struct ApiResquest {
         let uid = KeychainWrapper.standard.string(forKey: Keys.UID.rawValue)
         let pictureUrl = KeychainWrapper.standard.string(forKey: Keys.IMAGEM.rawValue)
         
-        let user = User(name: name!, username: email!, pictureUrl: pictureUrl!, uid: uid!)
+        var user = User(name: "", username: "", pictureUrl: "", uid: "")
+        if((name != nil) && (email != nil) && (uid != nil) && (pictureUrl != nil)){
+            user = User(name: name!, username: email!, pictureUrl: pictureUrl!, uid: uid!)
+        }
         return user
     }
 }

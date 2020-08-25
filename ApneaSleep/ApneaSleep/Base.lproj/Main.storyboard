@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3M-nL-bE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922.39999999999998" y="136.69950738916256"/>
+            <point key="canvasLocation" x="-1655" y="140"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -226,12 +226,67 @@
                     <connections>
                         <outlet property="loginButton" destination="fcA-GE-M0h" id="qWF-Mc-p8n"/>
                         <outlet property="mainImage" destination="6h9-aA-neA" id="Y6r-1a-plD"/>
-                        <segue destination="D2B-DK-lnD" kind="presentation" identifier="userLogged" modalPresentationStyle="fullScreen" id="E54-AE-4jI"/>
+                        <segue destination="0ut-V9-80y" kind="presentation" identifier="userLogged" modalPresentationStyle="fullScreen" id="N1z-pO-g5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
+            <point key="canvasLocation" x="-742" y="140"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="9Re-lz-a7b">
+            <objects>
+                <viewController id="0ut-V9-80y" customClass="introViewController" customModule="Apnea_Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fQ6-jh-lXc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blE-xY-u7x">
+                                <rect key="frame" x="114" y="698" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="D2B-DK-lnD" kind="presentation" modalPresentationStyle="fullScreen" id="XHi-go-4hq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qiT-AB-ia8">
+                                <rect key="frame" x="64" y="55" width="238" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apnea Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fd-EM-FbW">
+                                        <rect key="frame" x="45" y="0.0" width="199" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4WT-AS-kYS"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishButton" destination="blE-xY-u7x" id="edt-Ib-9ow"/>
+                        <outlet property="headerLabel" destination="qiT-AB-ia8" id="vMk-YY-vOU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEU-Gu-Pc5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="139.65517241379311"/>
         </scene>
         <!--Apnea Sleep-->
         <scene sceneID="7DZ-pb-H7R">
@@ -647,7 +702,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9E-nF-see" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="139.65517241379311"/>
+            <point key="canvasLocation" x="1111" y="140"/>
         </scene>
         <!--Apnea Sleep-->
         <scene sceneID="bFt-aM-Bca">

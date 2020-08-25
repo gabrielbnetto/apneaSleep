@@ -38,6 +38,7 @@
 		DBDB10B42497E9CA007E0271 /* ListAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */; };
 		DBDB10B62497F3B3007E0271 /* AudioList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B52497F3B3007E0271 /* AudioList.swift */; };
 		DBDB10B824981828007E0271 /* AudioDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDB10B724981828007E0271 /* AudioDetailViewController.swift */; };
+		EE3FCAF624ED500A00DA6BFA /* introViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3FCAF524ED500A00DA6BFA /* introViewController.swift */; };
 		EE7CECFC24EB04E900FF973B /* splashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = EE7CECFB24EB04E900FF973B /* splashAnimation.json */; };
 		EE7CECFE24EB064000FF973B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7CECFD24EB064000FF973B /* SplashViewController.swift */; };
 		EEF5226624C86684007BBAEF /* AudioEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF5226524C86684007BBAEF /* AudioEmail.swift */; };
@@ -80,6 +81,7 @@
 		DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAudioViewController.swift; sourceTree = "<group>"; };
 		DBDB10B52497F3B3007E0271 /* AudioList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioList.swift; sourceTree = "<group>"; };
 		DBDB10B724981828007E0271 /* AudioDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDetailViewController.swift; sourceTree = "<group>"; };
+		EE3FCAF524ED500A00DA6BFA /* introViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introViewController.swift; sourceTree = "<group>"; };
 		EE7CECFB24EB04E900FF973B /* splashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashAnimation.json; sourceTree = "<group>"; };
 		EE7CECFD24EB064000FF973B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		EEF5226524C86684007BBAEF /* AudioEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEmail.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				DBDB10B32497E9CA007E0271 /* ListAudioViewController.swift */,
 				DBDB10B724981828007E0271 /* AudioDetailViewController.swift */,
 				EE7CECFD24EB064000FF973B /* SplashViewController.swift */,
+				EE3FCAF524ED500A00DA6BFA /* introViewController.swift */,
 			);
 			path = PageControllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				DBDB10B62497F3B3007E0271 /* AudioList.swift in Sources */,
 				EEF5226624C86684007BBAEF /* AudioEmail.swift in Sources */,
 				EE7CECFE24EB064000FF973B /* SplashViewController.swift in Sources */,
+				EE3FCAF624ED500A00DA6BFA /* introViewController.swift in Sources */,
 				DBDB10B42497E9CA007E0271 /* ListAudioViewController.swift in Sources */,
 				44D61725240EC602006B5B6E /* AppDelegate.swift in Sources */,
 				44F09677245091DB007EB1E6 /* Audio.swift in Sources */,
