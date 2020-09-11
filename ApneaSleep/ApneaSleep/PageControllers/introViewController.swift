@@ -2,7 +2,7 @@
 //  introViewController.swift
 //  ApneaSleep
 //
-//  Created by Gabriel Boccia Netto (E) on 19/08/20.
+//  Created by Gabriel Boccia Netto on 19/08/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 //
 
