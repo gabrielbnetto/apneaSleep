@@ -18,6 +18,15 @@ class SplashViewController: UIViewController {
         startAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     func startAnimation() {
         let checkMarkAnimation =  AnimationView(name: "splashAnimation")
         splashAnimation.contentMode = .scaleAspectFit

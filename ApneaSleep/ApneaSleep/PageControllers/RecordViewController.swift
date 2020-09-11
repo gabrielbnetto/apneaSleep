@@ -53,6 +53,15 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
         audioName.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -66,7 +75,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
     func displayAlert (message: String, type: Int) {
         switch type {
             case 1: Loaf(message, state: .error, sender: self).show()
-            case 2: Loaf(message, state: .custom(.init(backgroundColor: .black, icon: UIImage(named: "moon"))), sender: self).show()
+                    mainLoaderController.stop()
+            case 2: Loaf(message,
+                         state: .custom(.init(backgroundColor: .black, icon: UIImage(named: "moon"))),
+                         presentingDirection: .left, dismissingDirection: .right, sender: self).show()
             default:Loaf(message, state: .warning, sender: self).show()
         }
     }
@@ -162,14 +174,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
                     self.audioName.isHidden = true
                     self.audioClear.isHidden = true
                     self.audioName.text = ""
-                    mainLoaderController.stop()
                     self.displayAlert(message: "Audio foi salvo com sucesso.", type: 2)
+                    mainLoaderController.stop()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.displayAlert(message: "Ocorreu um erro ao tentar salvar o seu audio, por favor tente novamente mais tarde!.", type: 1)
+                    self.animateButton(button: self.resendButton)
                     print("Error: \(error)")
-                    mainLoaderController.stop()
                 }
             }
         })
@@ -180,7 +192,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
             mainLoaderController.start()
             self.transformToBase64andSendAudio()
         }else{
-             self.displayAlert(message: "E necessario informar um nome para o audio!", type: 3)
+            self.displayAlert(message: "E necessario informar um nome para o audio!", type: 3)
+            self.animateButton(button: self.audioName)
         }
     }
     
@@ -197,5 +210,15 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, UITextFie
             return false
         }
         return true
+    }
+    
+    func animateButton(button: UIView) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: button.center.x - 10, y: button.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: button.center.x + 10, y: button.center.y))
+        button.layer.add(animation, forKey: "position")
     }
 }

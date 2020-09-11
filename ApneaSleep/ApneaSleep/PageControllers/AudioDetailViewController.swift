@@ -35,6 +35,15 @@ class AudioDetailViewController: UIViewController {
         startAnimation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     @IBAction func sendMail(_ sender: Any) {
         if(audio.status == "E"){
             DispatchQueue.main.async{
@@ -80,6 +89,7 @@ class AudioDetailViewController: UIViewController {
             case 1:Loaf(message, state: .custom(.init(backgroundColor: .black, icon: UIImage(named: "sendMail"))), sender: self).show()
             case 2:Loaf(message, state: .warning, sender: self).show()
             default:Loaf(message, state: .error, sender: self).show()
+                    mailLoaderController.stop()
         }
     }
 }

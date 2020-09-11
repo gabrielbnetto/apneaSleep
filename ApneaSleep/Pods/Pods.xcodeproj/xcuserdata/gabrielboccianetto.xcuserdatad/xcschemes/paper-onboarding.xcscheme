@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FCD9915FE83842AE0201096155515772"
-               BuildableName = "AppCenterDistributeResources.bundle"
-               BlueprintName = "AppCenter-AppCenterDistributeResources"
+               BlueprintIdentifier = "092BBAE106FF2FFA56F415EFB1EDBC41"
+               BuildableName = "paper_onboarding.framework"
+               BlueprintName = "paper-onboarding"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

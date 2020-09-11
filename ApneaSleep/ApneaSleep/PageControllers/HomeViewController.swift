@@ -71,10 +71,16 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         self.startAnimation(animation: "sleepQualityImage", view: self.sleepQualityImage)
         self.startNotTalkingAnimation(animation: "notTalkingSleep", view: self.notTalkingSleep)
         self.startAnimation(animation: "failAnimation", view: self.failAnimation)
         self.startWalkingAnimation(animation: "personTalking", view: self.personTalking)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -163,6 +169,5 @@ class HomeViewController: UIViewController {
     func displayAlert(message: String) {
         Loaf(message, state: .error, presentingDirection: .left, dismissingDirection: .right,sender: self).show()
     }
-
 }
 

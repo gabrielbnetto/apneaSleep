@@ -16,4 +16,5 @@ target 'ApneaSleep' do
     pod 'Pastel'
     pod 'paper-onboarding'
     pod 'Loaf'
+    pod 'Comets'
 end

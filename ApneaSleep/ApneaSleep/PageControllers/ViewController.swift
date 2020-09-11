@@ -130,6 +130,20 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     func displayAlert() {
-        Loaf("Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", state: .error, sender: self).show()
+        animateButton()
+        mainLoaderController.stop()
+        Loaf("Ocorreu um erro ao tentar entrar! Por favor, tente novamente em alguns segundos.", state: .error, presentingDirection: .left, dismissingDirection: .right, sender: self).show()
     }
+    
+    func animateButton() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: loginButton.center.x - 10, y: loginButton.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: loginButton.center.x + 10, y: loginButton.center.y))
+        loginButton.layer.add(animation, forKey: "position")
+    }
+    
+    
 }

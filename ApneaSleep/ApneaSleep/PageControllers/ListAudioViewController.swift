@@ -37,9 +37,16 @@ class ListAudioViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         if(audios.count == 0){
             audios.append(AudioList(audioName: "Não há audios cadastrados", username: "", audioId: "", status: "", inclusionDate: "", finishedProcessingDate: "", possibleSpeech: "", didSpeak: ""))
         }
+    }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
 }
