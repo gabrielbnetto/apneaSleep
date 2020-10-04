@@ -52,10 +52,18 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logoutButton() {
-        let alert = UIAlertController(title: "Logout", message: "Tem certeza que deseja sair de sua conta?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Sair", style: UIAlertAction.Style.default, handler: { action in self.userLogout() }))
-        alert.addAction(UIAlertAction(title: "Ficar", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let reportAction = UIAlertAction(title: "Ficar", style: .default) { (action) in print("didPress stay") }
+
+        let blockAction = UIAlertAction(title: "Sair", style: .destructive) { (action) in self.userLogout() }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in print("didPress cancel") }
+
+        actionSheet.addAction(reportAction)
+        actionSheet.addAction(blockAction)
+        actionSheet.addAction(cancelAction)
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func userLogout(){

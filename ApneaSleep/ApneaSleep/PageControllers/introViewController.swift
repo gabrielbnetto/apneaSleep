@@ -2,7 +2,7 @@
 //  introViewController.swift
 //  ApneaSleep
 //
-//  Created by Gabriel Boccia Netto (E) on 19/08/20.
+//  Created by Gabriel Boccia Netto on 19/08/20.
 //  Copyright © 2020 Estudos. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import Comets
 
 class introViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var finishButton: UIButton!
-    @IBOutlet weak var headerLabel: UIView!
+    @IBOutlet weak var headerLabel: UILabel!
     
     static let titleFont = UIFont.boldSystemFont(ofSize: 32.0)
     static let descriptionFont = UIFont.systemFont(ofSize: 15.0)
@@ -21,14 +21,14 @@ class introViewController: UIViewController, CAAnimationDelegate {
                            title: "Análise em tempo real",
                            description: "Grave o áudio do seu sono para ter no dia seguinte uma análise completa sobre o audio enviado!",
                            pageIcon: UIImage(named: "graphIcon")!,
-                           color: UIColor(red: 0.075, green: 0.086, blue: 0.173, alpha: 0.99),
+                           color: UIColor.systemBlue,
                            titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
         
         OnboardingItemInfo(informationImage: UIImage(named: "microphone")!,
                            title: "Grave seu Audio",
                            description: "Simples e intuitivo. Começe a gravar seu audio na hora de deitar e quando acordar, pare de gravar e envie para ter sua análise. Você pode até nomear seu audio como quiser para identificar depois!",
                            pageIcon: UIImage(named: "playIcon")!,
-                           color: UIColor(red: 0.075, green: 0.086, blue: 0.173, alpha: 0.99),
+                           color: UIColor(red: 0.1 , green: 0.45, blue: 0.59, alpha: 0.99),
                            titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
         
         OnboardingItemInfo(informationImage: UIImage(named: "reportAnalysis")!,
@@ -70,6 +70,12 @@ class introViewController: UIViewController, CAAnimationDelegate {
             draw(x: x[index], y: y[index], delayTime: delayTime[index])
             index += 1
         }
+        
+        self.headerLabel.layer.shadowColor = UIColor.black.cgColor
+        self.headerLabel.layer.shadowRadius = 3.0
+        self.headerLabel.layer.shadowOpacity = 1.0
+        self.headerLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.headerLabel.layer.masksToBounds = false
     }
 
     func draw(x: Int, y: Int, delayTime: Double) {

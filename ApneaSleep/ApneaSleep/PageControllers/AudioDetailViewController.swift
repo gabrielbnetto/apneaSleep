@@ -23,6 +23,7 @@ class AudioDetailViewController: UIViewController {
         audioNameLabel.text = audio.audioName
         if(audio.status == "E"){
             statusLabel.text = "Status: Erro"
+            speechLabel.text = "O audio selecionado está com erro, por isso não guardamos nenhuma fala."
         }else if(audio.status == ""){
             statusLabel.text = " "
         }

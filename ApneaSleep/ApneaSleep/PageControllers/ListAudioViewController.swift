@@ -68,7 +68,7 @@ extension ListAudioViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.audioName.text = audios[indexPath.row].audioName
         switch audios[indexPath.row].status {
-            case "F":
+            case "A":
                 cell.audioStatus.text = "Analisado"
             case "E":
                 cell.audioStatus.text = "Erro"
